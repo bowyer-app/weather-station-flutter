@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <!-- background color -->
+  <color name="background_primary">#FFFFFF</color>
+  <color name="background_station">#000000</color>
+  <!-- text color -->
+  <color name="text_black">#08121A</color>
+  <color name="text_gray">#9C08121A</color>
+  <color name="text_white">#FFFFFF</color>
+  <color name="text_red">#FF6A20</color>
+  <color name="text_blue">#06AFCD</color>
+
+  <color name="object_white">#FFFFFF</color>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "166633565255",
+    "project_id": "weatherstation-6d79d",
+    "storage_bucket": "weatherstation-6d79d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166633565255:android:9b4ee5cc3d26f6af6b1562",
+        "android_client_info": {
+          "package_name": "com.bowyer.app.weatherstation.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166633565255-gplg4uej94jvgg5rtfcg77qbgs0lql22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHHGLvAEMoyW023-hZIJTIL2sA2JgLB7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166633565255-gplg4uej94jvgg5rtfcg77qbgs0lql22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
