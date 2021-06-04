@@ -3,7 +3,7 @@
 天気と部屋の気温、湿度を表示出来るアプリです。
 
 ### イメージ画像
-<img src="https://github.com/bowyer-app/weather-station-flutter/blob/main/picture/demo.png?raw=true" width="600">
+<img src="https://github.com/bowyer-app/weather-station-flutter/blob/master/picture/demo.png?raw=true" width="600">
 
 
 画像
