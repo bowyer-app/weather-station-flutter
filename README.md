@@ -29,6 +29,9 @@ https://miro.com/app/board/o9J_lAqCV2s=/
 ## デザインファイル
 https://www.figma.com/file/f60AhUUBYRu36MuFsZYkrX/Weather-Station-Design?node-id=0%3A1
 
+## 天気のアイコンファイル
+https://iconstore.co/icons/weather-vector-icons/
+
 ## 表示情報の取得方法
 ### 部屋の気温、湿度の取得
 SwitchBotのAPIを叩いています。
