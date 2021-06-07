@@ -10,5 +10,5 @@ extension DateTimeExt on DateTime {
   }
 
   /// Switch BotのAPI制限が1000/日なので3分に1回しかリクエストさせない
-  bool canWeatherRequestTime() => minute % 3 == 0 && millisecond == 0;
+  bool canWeatherRequestTime() => minute % 3 == 0 && second == 0;
 }
