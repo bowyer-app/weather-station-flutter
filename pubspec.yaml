@@ -44,7 +44,7 @@ dependencies:
   wakelock: ^0.6.2
 
   # For geolocation
-  geolocator: ^7.0.3
+  geolocator: ^9.0.2
   geocoding: ^2.0.0
 
   # For Utilities
