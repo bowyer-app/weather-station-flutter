@@ -1,7 +1,6 @@
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:ua_client_hints/ua_client_hints.dart';
 
 import 'host.dart';
 
@@ -10,7 +9,6 @@ class AppDio with DioMixin implements Dio {
   AppDio._(BaseOptions options) {
     this.options = options;
     interceptors.add(InterceptorsWrapper(onRequest: (options, handler) async {
-      options.headers.addAll(await userAgentClientHintsHeader());
       handler.next(options);
     }));
 
