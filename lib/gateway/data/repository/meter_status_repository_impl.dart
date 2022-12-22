@@ -9,18 +9,23 @@ import 'meter_status_repository.dart';
 import 'to_room_condition.dart';
 
 final meterRepositoryProvider = Provider<MeterRepository>(
-    (ref) => MeterRepositoryImpl(ref.read(meterStatusDataSourceProvider)));
+  (ref) => MeterRepositoryImpl(
+    dataSource: ref.read(meterStatusDataSourceProvider),
+  ),
+);
 
 class MeterRepositoryImpl implements MeterRepository {
-  MeterRepositoryImpl(this._dataSource);
+  MeterRepositoryImpl({
+    required this.dataSource,
+  });
 
-  final MeterStatusDataSource _dataSource;
+  final MeterStatusDataSource dataSource;
 
   @override
   Future<RoomCondition> getCurrentRoomCondition(
       {required MeterDeviceId deviceId,
       required SwitchBotAccessToken accessToken}) async {
-    final response = await _dataSource.getMeterStatus(
+    final response = await dataSource.getMeterStatus(
         deviceId: deviceId, accessToken: accessToken);
     return response.toRoomCondition();
   }

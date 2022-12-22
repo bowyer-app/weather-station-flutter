@@ -9,27 +9,34 @@ import 'to_weather.dart';
 import 'weather_repository.dart';
 
 final weatherRepositoryProvider = Provider<WeatherRepository>(
-    (ref) => WeatherRepositoryImpl(ref.read(weatherDataSourceProvider)));
+  (ref) => WeatherRepositoryImpl(
+    dataSource: ref.read(weatherDataSourceProvider),
+  ),
+);
 
 class WeatherRepositoryImpl implements WeatherRepository {
-  WeatherRepositoryImpl(this._dataSource);
+  WeatherRepositoryImpl({
+    required this.dataSource,
+  });
 
-  final WeatherDataSource _dataSource;
+  final WeatherDataSource dataSource;
 
   @override
-  Future<Weather> getCurrentWeather(
-      {required OpenWeatherAppId appId,
-      required Geolocation geolocation}) async {
-    final response = await _dataSource.getCurrentWeather(
+  Future<Weather> getCurrentWeather({
+    required OpenWeatherAppId appId,
+    required Geolocation geolocation,
+  }) async {
+    final response = await dataSource.getCurrentWeather(
         appId: appId, geolocation: geolocation);
     return response.toWeather();
   }
 
   @override
-  Future<List<Weather>> getWeeklyWeather(
-      {required OpenWeatherAppId appId,
-      required Geolocation geolocation}) async {
-    final response = await _dataSource.getWeeklyWeather(
+  Future<List<Weather>> getWeeklyWeather({
+    required OpenWeatherAppId appId,
+    required Geolocation geolocation,
+  }) async {
+    final response = await dataSource.getWeeklyWeather(
         appId: appId, geolocation: geolocation);
     return response.daily
         .map((dailyWeather) => dailyWeather.toWeather())

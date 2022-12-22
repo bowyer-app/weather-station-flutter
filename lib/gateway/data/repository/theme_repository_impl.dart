@@ -5,22 +5,30 @@ import '../local/theme_data_source.dart';
 import '../local/theme_data_source_impl.dart';
 import 'theme_repository.dart';
 
-final themeRepositoryProvider = Provider<ThemeRepository>((ref) =>
-    ThemeRepositoryImpl(dataSource: ref.read(themeDataSourceProvider)));
+final themeRepositoryProvider = Provider<ThemeRepository>(
+  (ref) => ThemeRepositoryImpl(
+    dataSource: ref.read(themeDataSourceProvider),
+  ),
+);
 
 class ThemeRepositoryImpl implements ThemeRepository {
-  ThemeRepositoryImpl({required ThemeDataSource dataSource})
-      : _dataSource = dataSource;
+  ThemeRepositoryImpl({
+    required this.dataSource,
+  });
 
-  final ThemeDataSource _dataSource;
+  final ThemeDataSource dataSource;
 
   @override
   Future<ThemeMode?> loadThemeMode() {
-    return _dataSource.loadThemeMode();
+    return dataSource.loadThemeMode();
   }
 
   @override
-  Future<void> saveThemeMode(ThemeMode theme) {
-    return _dataSource.saveThemeMode(theme);
+  Future<void> saveThemeMode({
+    required ThemeMode theme,
+  }) {
+    return dataSource.saveThemeMode(
+      theme: theme,
+    );
   }
 }

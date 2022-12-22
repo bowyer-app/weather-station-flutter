@@ -9,39 +9,61 @@ import '../local/app_setting_data_source_impl.dart';
 import 'app_setting_repository.dart';
 
 final appSettingRepositoryProvider = Provider<AppSettingRepository>(
-    (ref) => AppSettingRepositoryImpl(ref.read(appSettingDataSourceProvider)));
+  (ref) => AppSettingRepositoryImpl(
+    dataSource: ref.read(appSettingDataSourceProvider),
+  ),
+);
 
 class AppSettingRepositoryImpl extends AppSettingRepository {
-  AppSettingRepositoryImpl(this._dataSource);
+  AppSettingRepositoryImpl({
+    required this.dataSource,
+  });
 
-  final AppSettingDataSource _dataSource;
+  final AppSettingDataSource dataSource;
 
   @override
-  Future<MeterDeviceId?> loadMeterDeviceId() => _dataSource.loadMeterDeviceId();
+  Future<MeterDeviceId?> loadMeterDeviceId() => dataSource.loadMeterDeviceId();
 
   @override
   Future<OpenWeatherAppId?> loadOpenWeatherAppId() =>
-      _dataSource.loadOpenWeatherAppId();
+      dataSource.loadOpenWeatherAppId();
 
   @override
   Future<SwitchBotAccessToken?> loadSwitchBotAccessToken() =>
-      _dataSource.loadSwitchBotAccessToken();
+      dataSource.loadSwitchBotAccessToken();
 
   @override
-  Future<void> saveMeterDeviceId(MeterDeviceId deviceId) =>
-      _dataSource.saveMeterDeviceId(deviceId);
+  Future<void> saveMeterDeviceId({
+    required MeterDeviceId deviceId,
+  }) =>
+      dataSource.saveMeterDeviceId(
+        deviceId: deviceId,
+      );
 
   @override
-  Future<void> saveOpenWeatherAppId(OpenWeatherAppId appId) =>
-      _dataSource.saveOpenWeatherAppId(appId);
+  Future<void> saveOpenWeatherAppId({
+    required OpenWeatherAppId appId,
+  }) =>
+      dataSource.saveOpenWeatherAppId(
+        appId: appId,
+      );
 
   @override
-  Future<void> saveSwitchBotAccessToken(SwitchBotAccessToken accessToken) =>
-      _dataSource.saveSwitchBotAccessToken(accessToken);
+  Future<void> saveSwitchBotAccessToken({
+    required SwitchBotAccessToken accessToken,
+  }) =>
+      dataSource.saveSwitchBotAccessToken(
+        accessToken: accessToken,
+      );
 
   @override
-  Future<ZipCode?> loadZipCode() => _dataSource.loadZipCode();
+  Future<ZipCode?> loadZipCode() => dataSource.loadZipCode();
 
   @override
-  Future<void> saveZipCode(ZipCode zipCode) => _dataSource.saveZipCode(zipCode);
+  Future<void> saveZipCode({
+    required ZipCode zipCode,
+  }) =>
+      dataSource.saveZipCode(
+        zipCode: zipCode,
+      );
 }

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'daily_weather_item_model.dart';
 
@@ -10,28 +12,7 @@ part of 'daily_weather_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DailyWeatherItemModelTearOff {
-  const _$DailyWeatherItemModelTearOff();
-
-  _DailyWeatherItemModel call(
-      {required DateItemModel dateItemModel,
-      required WeatherType weatherType,
-      required double maxTemperature,
-      required double minTemperature}) {
-    return _DailyWeatherItemModel(
-      dateItemModel: dateItemModel,
-      weatherType: weatherType,
-      maxTemperature: maxTemperature,
-      minTemperature: minTemperature,
-    );
-  }
-}
-
-/// @nodoc
-const $DailyWeatherItemModel = _$DailyWeatherItemModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DailyWeatherItemModel {
@@ -49,7 +30,8 @@ mixin _$DailyWeatherItemModel {
 abstract class $DailyWeatherItemModelCopyWith<$Res> {
   factory $DailyWeatherItemModelCopyWith(DailyWeatherItemModel value,
           $Res Function(DailyWeatherItemModel) then) =
-      _$DailyWeatherItemModelCopyWithImpl<$Res>;
+      _$DailyWeatherItemModelCopyWithImpl<$Res, DailyWeatherItemModel>;
+  @useResult
   $Res call(
       {DateItemModel dateItemModel,
       WeatherType weatherType,
@@ -60,56 +42,61 @@ abstract class $DailyWeatherItemModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DailyWeatherItemModelCopyWithImpl<$Res>
+class _$DailyWeatherItemModelCopyWithImpl<$Res,
+        $Val extends DailyWeatherItemModel>
     implements $DailyWeatherItemModelCopyWith<$Res> {
   _$DailyWeatherItemModelCopyWithImpl(this._value, this._then);
 
-  final DailyWeatherItemModel _value;
   // ignore: unused_field
-  final $Res Function(DailyWeatherItemModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dateItemModel = freezed,
-    Object? weatherType = freezed,
-    Object? maxTemperature = freezed,
-    Object? minTemperature = freezed,
+    Object? dateItemModel = null,
+    Object? weatherType = null,
+    Object? maxTemperature = null,
+    Object? minTemperature = null,
   }) {
     return _then(_value.copyWith(
-      dateItemModel: dateItemModel == freezed
+      dateItemModel: null == dateItemModel
           ? _value.dateItemModel
           : dateItemModel // ignore: cast_nullable_to_non_nullable
               as DateItemModel,
-      weatherType: weatherType == freezed
+      weatherType: null == weatherType
           ? _value.weatherType
           : weatherType // ignore: cast_nullable_to_non_nullable
               as WeatherType,
-      maxTemperature: maxTemperature == freezed
+      maxTemperature: null == maxTemperature
           ? _value.maxTemperature
           : maxTemperature // ignore: cast_nullable_to_non_nullable
               as double,
-      minTemperature: minTemperature == freezed
+      minTemperature: null == minTemperature
           ? _value.minTemperature
           : minTemperature // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DateItemModelCopyWith<$Res> get dateItemModel {
     return $DateItemModelCopyWith<$Res>(_value.dateItemModel, (value) {
-      return _then(_value.copyWith(dateItemModel: value));
+      return _then(_value.copyWith(dateItemModel: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$DailyWeatherItemModelCopyWith<$Res>
+abstract class _$$_DailyWeatherItemModelCopyWith<$Res>
     implements $DailyWeatherItemModelCopyWith<$Res> {
-  factory _$DailyWeatherItemModelCopyWith(_DailyWeatherItemModel value,
-          $Res Function(_DailyWeatherItemModel) then) =
-      __$DailyWeatherItemModelCopyWithImpl<$Res>;
+  factory _$$_DailyWeatherItemModelCopyWith(_$_DailyWeatherItemModel value,
+          $Res Function(_$_DailyWeatherItemModel) then) =
+      __$$_DailyWeatherItemModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {DateItemModel dateItemModel,
       WeatherType weatherType,
@@ -121,37 +108,35 @@ abstract class _$DailyWeatherItemModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DailyWeatherItemModelCopyWithImpl<$Res>
-    extends _$DailyWeatherItemModelCopyWithImpl<$Res>
-    implements _$DailyWeatherItemModelCopyWith<$Res> {
-  __$DailyWeatherItemModelCopyWithImpl(_DailyWeatherItemModel _value,
-      $Res Function(_DailyWeatherItemModel) _then)
-      : super(_value, (v) => _then(v as _DailyWeatherItemModel));
+class __$$_DailyWeatherItemModelCopyWithImpl<$Res>
+    extends _$DailyWeatherItemModelCopyWithImpl<$Res, _$_DailyWeatherItemModel>
+    implements _$$_DailyWeatherItemModelCopyWith<$Res> {
+  __$$_DailyWeatherItemModelCopyWithImpl(_$_DailyWeatherItemModel _value,
+      $Res Function(_$_DailyWeatherItemModel) _then)
+      : super(_value, _then);
 
-  @override
-  _DailyWeatherItemModel get _value => super._value as _DailyWeatherItemModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dateItemModel = freezed,
-    Object? weatherType = freezed,
-    Object? maxTemperature = freezed,
-    Object? minTemperature = freezed,
+    Object? dateItemModel = null,
+    Object? weatherType = null,
+    Object? maxTemperature = null,
+    Object? minTemperature = null,
   }) {
-    return _then(_DailyWeatherItemModel(
-      dateItemModel: dateItemModel == freezed
+    return _then(_$_DailyWeatherItemModel(
+      dateItemModel: null == dateItemModel
           ? _value.dateItemModel
           : dateItemModel // ignore: cast_nullable_to_non_nullable
               as DateItemModel,
-      weatherType: weatherType == freezed
+      weatherType: null == weatherType
           ? _value.weatherType
           : weatherType // ignore: cast_nullable_to_non_nullable
               as WeatherType,
-      maxTemperature: maxTemperature == freezed
+      maxTemperature: null == maxTemperature
           ? _value.maxTemperature
           : maxTemperature // ignore: cast_nullable_to_non_nullable
               as double,
-      minTemperature: minTemperature == freezed
+      minTemperature: null == minTemperature
           ? _value.minTemperature
           : minTemperature // ignore: cast_nullable_to_non_nullable
               as double,
@@ -160,6 +145,7 @@ class __$DailyWeatherItemModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DailyWeatherItemModel implements _DailyWeatherItemModel {
   _$_DailyWeatherItemModel(
       {required this.dateItemModel,
@@ -184,53 +170,47 @@ class _$_DailyWeatherItemModel implements _DailyWeatherItemModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DailyWeatherItemModel &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DailyWeatherItemModel &&
             (identical(other.dateItemModel, dateItemModel) ||
-                const DeepCollectionEquality()
-                    .equals(other.dateItemModel, dateItemModel)) &&
+                other.dateItemModel == dateItemModel) &&
             (identical(other.weatherType, weatherType) ||
-                const DeepCollectionEquality()
-                    .equals(other.weatherType, weatherType)) &&
+                other.weatherType == weatherType) &&
             (identical(other.maxTemperature, maxTemperature) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxTemperature, maxTemperature)) &&
+                other.maxTemperature == maxTemperature) &&
             (identical(other.minTemperature, minTemperature) ||
-                const DeepCollectionEquality()
-                    .equals(other.minTemperature, minTemperature)));
+                other.minTemperature == minTemperature));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(dateItemModel) ^
-      const DeepCollectionEquality().hash(weatherType) ^
-      const DeepCollectionEquality().hash(maxTemperature) ^
-      const DeepCollectionEquality().hash(minTemperature);
+  int get hashCode => Object.hash(
+      runtimeType, dateItemModel, weatherType, maxTemperature, minTemperature);
 
   @JsonKey(ignore: true)
   @override
-  _$DailyWeatherItemModelCopyWith<_DailyWeatherItemModel> get copyWith =>
-      __$DailyWeatherItemModelCopyWithImpl<_DailyWeatherItemModel>(
+  @pragma('vm:prefer-inline')
+  _$$_DailyWeatherItemModelCopyWith<_$_DailyWeatherItemModel> get copyWith =>
+      __$$_DailyWeatherItemModelCopyWithImpl<_$_DailyWeatherItemModel>(
           this, _$identity);
 }
 
 abstract class _DailyWeatherItemModel implements DailyWeatherItemModel {
   factory _DailyWeatherItemModel(
-      {required DateItemModel dateItemModel,
-      required WeatherType weatherType,
-      required double maxTemperature,
-      required double minTemperature}) = _$_DailyWeatherItemModel;
+      {required final DateItemModel dateItemModel,
+      required final WeatherType weatherType,
+      required final double maxTemperature,
+      required final double minTemperature}) = _$_DailyWeatherItemModel;
 
   @override
-  DateItemModel get dateItemModel => throw _privateConstructorUsedError;
+  DateItemModel get dateItemModel;
   @override
-  WeatherType get weatherType => throw _privateConstructorUsedError;
+  WeatherType get weatherType;
   @override
-  double get maxTemperature => throw _privateConstructorUsedError;
+  double get maxTemperature;
   @override
-  double get minTemperature => throw _privateConstructorUsedError;
+  double get minTemperature;
   @override
   @JsonKey(ignore: true)
-  _$DailyWeatherItemModelCopyWith<_DailyWeatherItemModel> get copyWith =>
+  _$$_DailyWeatherItemModelCopyWith<_$_DailyWeatherItemModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

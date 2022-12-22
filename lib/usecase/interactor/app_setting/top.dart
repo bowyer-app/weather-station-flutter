@@ -30,20 +30,27 @@ class AppSettingTopInteractor implements AppSettingTopUseCase {
 
   @override
   Future<void> saveMeterDeviceId(MeterDeviceId deviceId) =>
-      _settingRepository.saveMeterDeviceId(deviceId);
+      _settingRepository.saveMeterDeviceId(
+        deviceId: deviceId,
+      );
 
   @override
   Future<void> saveOpenWeatherAppId(OpenWeatherAppId appId) =>
-      _settingRepository.saveOpenWeatherAppId(appId);
+      _settingRepository.saveOpenWeatherAppId(
+        appId: appId,
+      );
 
   @override
   Future<void> saveSwitchBotAccessToken(SwitchBotAccessToken accessToken) =>
-      _settingRepository.saveSwitchBotAccessToken(accessToken);
+      _settingRepository.saveSwitchBotAccessToken(
+        accessToken: accessToken,
+      );
 
   @override
   Future<ZipCode?> loadZipCode() => _settingRepository.loadZipCode();
 
   @override
-  Future<void> saveZipCode(ZipCode zipCode) =>
-      _settingRepository.saveZipCode(zipCode);
+  Future<void> saveZipCode(ZipCode zipCode) => _settingRepository.saveZipCode(
+        zipCode: zipCode,
+      );
 }

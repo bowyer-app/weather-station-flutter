@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'weather_data.dart';
 
@@ -10,30 +12,11 @@ part of 'weather_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 WeatherData _$WeatherDataFromJson(Map<String, dynamic> json) {
   return _WeatherData.fromJson(json);
 }
-
-/// @nodoc
-class _$WeatherDataTearOff {
-  const _$WeatherDataTearOff();
-
-  _WeatherData call({String description = "", String icon = ""}) {
-    return _WeatherData(
-      description: description,
-      icon: icon,
-    );
-  }
-
-  WeatherData fromJson(Map<String, Object> json) {
-    return WeatherData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $WeatherData = _$WeatherDataTearOff();
 
 /// @nodoc
 mixin _$WeatherData {
@@ -50,67 +33,71 @@ mixin _$WeatherData {
 abstract class $WeatherDataCopyWith<$Res> {
   factory $WeatherDataCopyWith(
           WeatherData value, $Res Function(WeatherData) then) =
-      _$WeatherDataCopyWithImpl<$Res>;
+      _$WeatherDataCopyWithImpl<$Res, WeatherData>;
+  @useResult
   $Res call({String description, String icon});
 }
 
 /// @nodoc
-class _$WeatherDataCopyWithImpl<$Res> implements $WeatherDataCopyWith<$Res> {
+class _$WeatherDataCopyWithImpl<$Res, $Val extends WeatherData>
+    implements $WeatherDataCopyWith<$Res> {
   _$WeatherDataCopyWithImpl(this._value, this._then);
 
-  final WeatherData _value;
   // ignore: unused_field
-  final $Res Function(WeatherData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
-    Object? icon = freezed,
+    Object? description = null,
+    Object? icon = null,
   }) {
     return _then(_value.copyWith(
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
+      icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$WeatherDataCopyWith<$Res>
+abstract class _$$_WeatherDataCopyWith<$Res>
     implements $WeatherDataCopyWith<$Res> {
-  factory _$WeatherDataCopyWith(
-          _WeatherData value, $Res Function(_WeatherData) then) =
-      __$WeatherDataCopyWithImpl<$Res>;
+  factory _$$_WeatherDataCopyWith(
+          _$_WeatherData value, $Res Function(_$_WeatherData) then) =
+      __$$_WeatherDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String description, String icon});
 }
 
 /// @nodoc
-class __$WeatherDataCopyWithImpl<$Res> extends _$WeatherDataCopyWithImpl<$Res>
-    implements _$WeatherDataCopyWith<$Res> {
-  __$WeatherDataCopyWithImpl(
-      _WeatherData _value, $Res Function(_WeatherData) _then)
-      : super(_value, (v) => _then(v as _WeatherData));
+class __$$_WeatherDataCopyWithImpl<$Res>
+    extends _$WeatherDataCopyWithImpl<$Res, _$_WeatherData>
+    implements _$$_WeatherDataCopyWith<$Res> {
+  __$$_WeatherDataCopyWithImpl(
+      _$_WeatherData _value, $Res Function(_$_WeatherData) _then)
+      : super(_value, _then);
 
-  @override
-  _WeatherData get _value => super._value as _WeatherData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
-    Object? icon = freezed,
+    Object? description = null,
+    Object? icon = null,
   }) {
-    return _then(_WeatherData(
-      description: description == freezed
+    return _then(_$_WeatherData(
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
+      icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as String,
@@ -118,20 +105,19 @@ class __$WeatherDataCopyWithImpl<$Res> extends _$WeatherDataCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_WeatherData implements _WeatherData {
   _$_WeatherData({this.description = "", this.icon = ""});
 
   factory _$_WeatherData.fromJson(Map<String, dynamic> json) =>
-      _$_$_WeatherDataFromJson(json);
+      _$$_WeatherDataFromJson(json);
 
-  @JsonKey(defaultValue: "")
   @override
+  @JsonKey()
   final String description;
-  @JsonKey(defaultValue: "")
   @override
+  @JsonKey()
   final String icon;
 
   @override
@@ -142,43 +128,44 @@ class _$_WeatherData implements _WeatherData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WeatherData &&
+        (other.runtimeType == runtimeType &&
+            other is _$_WeatherData &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.icon, icon) ||
-                const DeepCollectionEquality().equals(other.icon, icon)));
+                other.description == description) &&
+            (identical(other.icon, icon) || other.icon == icon));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(icon);
 
   @JsonKey(ignore: true)
   @override
-  _$WeatherDataCopyWith<_WeatherData> get copyWith =>
-      __$WeatherDataCopyWithImpl<_WeatherData>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, description, icon);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_WeatherDataCopyWith<_$_WeatherData> get copyWith =>
+      __$$_WeatherDataCopyWithImpl<_$_WeatherData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_WeatherDataToJson(this);
+    return _$$_WeatherDataToJson(
+      this,
+    );
   }
 }
 
 abstract class _WeatherData implements WeatherData {
-  factory _WeatherData({String description, String icon}) = _$_WeatherData;
+  factory _WeatherData({final String description, final String icon}) =
+      _$_WeatherData;
 
   factory _WeatherData.fromJson(Map<String, dynamic> json) =
       _$_WeatherData.fromJson;
 
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get icon => throw _privateConstructorUsedError;
+  String get icon;
   @override
   @JsonKey(ignore: true)
-  _$WeatherDataCopyWith<_WeatherData> get copyWith =>
+  _$$_WeatherDataCopyWith<_$_WeatherData> get copyWith =>
       throw _privateConstructorUsedError;
 }

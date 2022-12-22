@@ -8,23 +8,31 @@ abstract class AppSettingRepository {
   Future<MeterDeviceId?> loadMeterDeviceId();
 
   /// [MeterDeviceId]を保存
-  Future<void> saveMeterDeviceId(MeterDeviceId deviceId);
+  Future<void> saveMeterDeviceId({
+    required MeterDeviceId deviceId,
+  });
 
   /// [SwitchBotAccessToken]を取得
   Future<SwitchBotAccessToken?> loadSwitchBotAccessToken();
 
   /// [SwitchBotAccessToken]を保存
-  Future<void> saveSwitchBotAccessToken(SwitchBotAccessToken accessToken);
+  Future<void> saveSwitchBotAccessToken({
+    required SwitchBotAccessToken accessToken,
+  });
 
   /// [OpenWeatherAppId]を取得
   Future<OpenWeatherAppId?> loadOpenWeatherAppId();
 
   /// [OpenWeatherAppId]を保存
-  Future<void> saveOpenWeatherAppId(OpenWeatherAppId appId);
+  Future<void> saveOpenWeatherAppId({
+    required OpenWeatherAppId appId,
+  });
 
   /// [ZipCode]を取得
   Future<ZipCode?> loadZipCode();
 
   /// [ZipCode]を保存
-  Future<void> saveZipCode(ZipCode zipCode);
+  Future<void> saveZipCode({
+    required ZipCode zipCode,
+  });
 }

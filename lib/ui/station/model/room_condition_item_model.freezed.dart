@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'room_condition_item_model.dart';
 
@@ -10,23 +12,7 @@ part of 'room_condition_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RoomConditionItemModelTearOff {
-  const _$RoomConditionItemModelTearOff();
-
-  _RoomConditionItemModel call(
-      {required double nowTemperature, required int humidity}) {
-    return _RoomConditionItemModel(
-      nowTemperature: nowTemperature,
-      humidity: humidity,
-    );
-  }
-}
-
-/// @nodoc
-const $RoomConditionItemModel = _$RoomConditionItemModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RoomConditionItemModel {
@@ -42,69 +28,73 @@ mixin _$RoomConditionItemModel {
 abstract class $RoomConditionItemModelCopyWith<$Res> {
   factory $RoomConditionItemModelCopyWith(RoomConditionItemModel value,
           $Res Function(RoomConditionItemModel) then) =
-      _$RoomConditionItemModelCopyWithImpl<$Res>;
+      _$RoomConditionItemModelCopyWithImpl<$Res, RoomConditionItemModel>;
+  @useResult
   $Res call({double nowTemperature, int humidity});
 }
 
 /// @nodoc
-class _$RoomConditionItemModelCopyWithImpl<$Res>
+class _$RoomConditionItemModelCopyWithImpl<$Res,
+        $Val extends RoomConditionItemModel>
     implements $RoomConditionItemModelCopyWith<$Res> {
   _$RoomConditionItemModelCopyWithImpl(this._value, this._then);
 
-  final RoomConditionItemModel _value;
   // ignore: unused_field
-  final $Res Function(RoomConditionItemModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? nowTemperature = freezed,
-    Object? humidity = freezed,
+    Object? nowTemperature = null,
+    Object? humidity = null,
   }) {
     return _then(_value.copyWith(
-      nowTemperature: nowTemperature == freezed
+      nowTemperature: null == nowTemperature
           ? _value.nowTemperature
           : nowTemperature // ignore: cast_nullable_to_non_nullable
               as double,
-      humidity: humidity == freezed
+      humidity: null == humidity
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$RoomConditionItemModelCopyWith<$Res>
+abstract class _$$_RoomConditionItemModelCopyWith<$Res>
     implements $RoomConditionItemModelCopyWith<$Res> {
-  factory _$RoomConditionItemModelCopyWith(_RoomConditionItemModel value,
-          $Res Function(_RoomConditionItemModel) then) =
-      __$RoomConditionItemModelCopyWithImpl<$Res>;
+  factory _$$_RoomConditionItemModelCopyWith(_$_RoomConditionItemModel value,
+          $Res Function(_$_RoomConditionItemModel) then) =
+      __$$_RoomConditionItemModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({double nowTemperature, int humidity});
 }
 
 /// @nodoc
-class __$RoomConditionItemModelCopyWithImpl<$Res>
-    extends _$RoomConditionItemModelCopyWithImpl<$Res>
-    implements _$RoomConditionItemModelCopyWith<$Res> {
-  __$RoomConditionItemModelCopyWithImpl(_RoomConditionItemModel _value,
-      $Res Function(_RoomConditionItemModel) _then)
-      : super(_value, (v) => _then(v as _RoomConditionItemModel));
+class __$$_RoomConditionItemModelCopyWithImpl<$Res>
+    extends _$RoomConditionItemModelCopyWithImpl<$Res,
+        _$_RoomConditionItemModel>
+    implements _$$_RoomConditionItemModelCopyWith<$Res> {
+  __$$_RoomConditionItemModelCopyWithImpl(_$_RoomConditionItemModel _value,
+      $Res Function(_$_RoomConditionItemModel) _then)
+      : super(_value, _then);
 
-  @override
-  _RoomConditionItemModel get _value => super._value as _RoomConditionItemModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? nowTemperature = freezed,
-    Object? humidity = freezed,
+    Object? nowTemperature = null,
+    Object? humidity = null,
   }) {
-    return _then(_RoomConditionItemModel(
-      nowTemperature: nowTemperature == freezed
+    return _then(_$_RoomConditionItemModel(
+      nowTemperature: null == nowTemperature
           ? _value.nowTemperature
           : nowTemperature // ignore: cast_nullable_to_non_nullable
               as double,
-      humidity: humidity == freezed
+      humidity: null == humidity
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
               as int,
@@ -113,6 +103,7 @@ class __$RoomConditionItemModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_RoomConditionItemModel implements _RoomConditionItemModel {
   _$_RoomConditionItemModel(
       {required this.nowTemperature, required this.humidity});
@@ -130,39 +121,36 @@ class _$_RoomConditionItemModel implements _RoomConditionItemModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RoomConditionItemModel &&
+        (other.runtimeType == runtimeType &&
+            other is _$_RoomConditionItemModel &&
             (identical(other.nowTemperature, nowTemperature) ||
-                const DeepCollectionEquality()
-                    .equals(other.nowTemperature, nowTemperature)) &&
+                other.nowTemperature == nowTemperature) &&
             (identical(other.humidity, humidity) ||
-                const DeepCollectionEquality()
-                    .equals(other.humidity, humidity)));
+                other.humidity == humidity));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(nowTemperature) ^
-      const DeepCollectionEquality().hash(humidity);
+  int get hashCode => Object.hash(runtimeType, nowTemperature, humidity);
 
   @JsonKey(ignore: true)
   @override
-  _$RoomConditionItemModelCopyWith<_RoomConditionItemModel> get copyWith =>
-      __$RoomConditionItemModelCopyWithImpl<_RoomConditionItemModel>(
+  @pragma('vm:prefer-inline')
+  _$$_RoomConditionItemModelCopyWith<_$_RoomConditionItemModel> get copyWith =>
+      __$$_RoomConditionItemModelCopyWithImpl<_$_RoomConditionItemModel>(
           this, _$identity);
 }
 
 abstract class _RoomConditionItemModel implements RoomConditionItemModel {
   factory _RoomConditionItemModel(
-      {required double nowTemperature,
-      required int humidity}) = _$_RoomConditionItemModel;
+      {required final double nowTemperature,
+      required final int humidity}) = _$_RoomConditionItemModel;
 
   @override
-  double get nowTemperature => throw _privateConstructorUsedError;
+  double get nowTemperature;
   @override
-  int get humidity => throw _privateConstructorUsedError;
+  int get humidity;
   @override
   @JsonKey(ignore: true)
-  _$RoomConditionItemModelCopyWith<_RoomConditionItemModel> get copyWith =>
+  _$$_RoomConditionItemModelCopyWith<_$_RoomConditionItemModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'weekly_weather_item_model.dart';
 
@@ -10,22 +12,7 @@ part of 'weekly_weather_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$WeeklyWeatherItemModelTearOff {
-  const _$WeeklyWeatherItemModelTearOff();
-
-  _WeeklyWeatherItemModel call(
-      {required List<DailyWeatherItemModel> weatherList}) {
-    return _WeeklyWeatherItemModel(
-      weatherList: weatherList,
-    );
-  }
-}
-
-/// @nodoc
-const $WeeklyWeatherItemModel = _$WeeklyWeatherItemModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$WeeklyWeatherItemModel {
@@ -41,60 +28,64 @@ mixin _$WeeklyWeatherItemModel {
 abstract class $WeeklyWeatherItemModelCopyWith<$Res> {
   factory $WeeklyWeatherItemModelCopyWith(WeeklyWeatherItemModel value,
           $Res Function(WeeklyWeatherItemModel) then) =
-      _$WeeklyWeatherItemModelCopyWithImpl<$Res>;
+      _$WeeklyWeatherItemModelCopyWithImpl<$Res, WeeklyWeatherItemModel>;
+  @useResult
   $Res call({List<DailyWeatherItemModel> weatherList});
 }
 
 /// @nodoc
-class _$WeeklyWeatherItemModelCopyWithImpl<$Res>
+class _$WeeklyWeatherItemModelCopyWithImpl<$Res,
+        $Val extends WeeklyWeatherItemModel>
     implements $WeeklyWeatherItemModelCopyWith<$Res> {
   _$WeeklyWeatherItemModelCopyWithImpl(this._value, this._then);
 
-  final WeeklyWeatherItemModel _value;
   // ignore: unused_field
-  final $Res Function(WeeklyWeatherItemModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weatherList = freezed,
+    Object? weatherList = null,
   }) {
     return _then(_value.copyWith(
-      weatherList: weatherList == freezed
+      weatherList: null == weatherList
           ? _value.weatherList
           : weatherList // ignore: cast_nullable_to_non_nullable
               as List<DailyWeatherItemModel>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$WeeklyWeatherItemModelCopyWith<$Res>
+abstract class _$$_WeeklyWeatherItemModelCopyWith<$Res>
     implements $WeeklyWeatherItemModelCopyWith<$Res> {
-  factory _$WeeklyWeatherItemModelCopyWith(_WeeklyWeatherItemModel value,
-          $Res Function(_WeeklyWeatherItemModel) then) =
-      __$WeeklyWeatherItemModelCopyWithImpl<$Res>;
+  factory _$$_WeeklyWeatherItemModelCopyWith(_$_WeeklyWeatherItemModel value,
+          $Res Function(_$_WeeklyWeatherItemModel) then) =
+      __$$_WeeklyWeatherItemModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<DailyWeatherItemModel> weatherList});
 }
 
 /// @nodoc
-class __$WeeklyWeatherItemModelCopyWithImpl<$Res>
-    extends _$WeeklyWeatherItemModelCopyWithImpl<$Res>
-    implements _$WeeklyWeatherItemModelCopyWith<$Res> {
-  __$WeeklyWeatherItemModelCopyWithImpl(_WeeklyWeatherItemModel _value,
-      $Res Function(_WeeklyWeatherItemModel) _then)
-      : super(_value, (v) => _then(v as _WeeklyWeatherItemModel));
+class __$$_WeeklyWeatherItemModelCopyWithImpl<$Res>
+    extends _$WeeklyWeatherItemModelCopyWithImpl<$Res,
+        _$_WeeklyWeatherItemModel>
+    implements _$$_WeeklyWeatherItemModelCopyWith<$Res> {
+  __$$_WeeklyWeatherItemModelCopyWithImpl(_$_WeeklyWeatherItemModel _value,
+      $Res Function(_$_WeeklyWeatherItemModel) _then)
+      : super(_value, _then);
 
-  @override
-  _WeeklyWeatherItemModel get _value => super._value as _WeeklyWeatherItemModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weatherList = freezed,
+    Object? weatherList = null,
   }) {
-    return _then(_WeeklyWeatherItemModel(
-      weatherList: weatherList == freezed
-          ? _value.weatherList
+    return _then(_$_WeeklyWeatherItemModel(
+      weatherList: null == weatherList
+          ? _value._weatherList
           : weatherList // ignore: cast_nullable_to_non_nullable
               as List<DailyWeatherItemModel>,
     ));
@@ -102,11 +93,19 @@ class __$WeeklyWeatherItemModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_WeeklyWeatherItemModel implements _WeeklyWeatherItemModel {
-  _$_WeeklyWeatherItemModel({required this.weatherList});
 
+class _$_WeeklyWeatherItemModel implements _WeeklyWeatherItemModel {
+  _$_WeeklyWeatherItemModel(
+      {required final List<DailyWeatherItemModel> weatherList})
+      : _weatherList = weatherList;
+
+  final List<DailyWeatherItemModel> _weatherList;
   @override
-  final List<DailyWeatherItemModel> weatherList;
+  List<DailyWeatherItemModel> get weatherList {
+    if (_weatherList is EqualUnmodifiableListView) return _weatherList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_weatherList);
+  }
 
   @override
   String toString() {
@@ -116,33 +115,33 @@ class _$_WeeklyWeatherItemModel implements _WeeklyWeatherItemModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WeeklyWeatherItemModel &&
-            (identical(other.weatherList, weatherList) ||
-                const DeepCollectionEquality()
-                    .equals(other.weatherList, weatherList)));
+        (other.runtimeType == runtimeType &&
+            other is _$_WeeklyWeatherItemModel &&
+            const DeepCollectionEquality()
+                .equals(other._weatherList, _weatherList));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(weatherList);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_weatherList));
 
   @JsonKey(ignore: true)
   @override
-  _$WeeklyWeatherItemModelCopyWith<_WeeklyWeatherItemModel> get copyWith =>
-      __$WeeklyWeatherItemModelCopyWithImpl<_WeeklyWeatherItemModel>(
+  @pragma('vm:prefer-inline')
+  _$$_WeeklyWeatherItemModelCopyWith<_$_WeeklyWeatherItemModel> get copyWith =>
+      __$$_WeeklyWeatherItemModelCopyWithImpl<_$_WeeklyWeatherItemModel>(
           this, _$identity);
 }
 
 abstract class _WeeklyWeatherItemModel implements WeeklyWeatherItemModel {
   factory _WeeklyWeatherItemModel(
-          {required List<DailyWeatherItemModel> weatherList}) =
+          {required final List<DailyWeatherItemModel> weatherList}) =
       _$_WeeklyWeatherItemModel;
 
   @override
-  List<DailyWeatherItemModel> get weatherList =>
-      throw _privateConstructorUsedError;
+  List<DailyWeatherItemModel> get weatherList;
   @override
   @JsonKey(ignore: true)
-  _$WeeklyWeatherItemModelCopyWith<_WeeklyWeatherItemModel> get copyWith =>
+  _$$_WeeklyWeatherItemModelCopyWith<_$_WeeklyWeatherItemModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

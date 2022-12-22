@@ -9,10 +9,11 @@ part 'daily_weather.g.dart';
 
 @freezed
 class DailyWeather with _$DailyWeather {
-  factory DailyWeather(
-      {@Default(0) int dt,
-      DailyTemperature? temp,
-      @Default([]) List<WeatherData> weather}) = _DailyWeather;
+  factory DailyWeather({
+    @Default(0) int dt,
+    DailyTemperature? temp,
+    @Default([]) List<WeatherData> weather,
+  }) = _DailyWeather;
 
   factory DailyWeather.fromJson(Map<String, dynamic> json) =>
       _$DailyWeatherFromJson(json);

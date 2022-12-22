@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'setting_page_state.dart';
 
@@ -10,28 +12,7 @@ part of 'setting_page_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SettingPageStateTearOff {
-  const _$SettingPageStateTearOff();
-
-  _SettingPageState call(
-      {MeterDeviceId? deviceId,
-      SwitchBotAccessToken? accessToken,
-      OpenWeatherAppId? appId,
-      ZipCode? zipCode}) {
-    return _SettingPageState(
-      deviceId: deviceId,
-      accessToken: accessToken,
-      appId: appId,
-      zipCode: zipCode,
-    );
-  }
-}
-
-/// @nodoc
-const $SettingPageState = _$SettingPageStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SettingPageState {
@@ -49,7 +30,8 @@ mixin _$SettingPageState {
 abstract class $SettingPageStateCopyWith<$Res> {
   factory $SettingPageStateCopyWith(
           SettingPageState value, $Res Function(SettingPageState) then) =
-      _$SettingPageStateCopyWithImpl<$Res>;
+      _$SettingPageStateCopyWithImpl<$Res, SettingPageState>;
+  @useResult
   $Res call(
       {MeterDeviceId? deviceId,
       SwitchBotAccessToken? accessToken,
@@ -58,14 +40,16 @@ abstract class $SettingPageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingPageStateCopyWithImpl<$Res>
+class _$SettingPageStateCopyWithImpl<$Res, $Val extends SettingPageState>
     implements $SettingPageStateCopyWith<$Res> {
   _$SettingPageStateCopyWithImpl(this._value, this._then);
 
-  final SettingPageState _value;
   // ignore: unused_field
-  final $Res Function(SettingPageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? deviceId = freezed,
@@ -74,33 +58,34 @@ class _$SettingPageStateCopyWithImpl<$Res>
     Object? zipCode = freezed,
   }) {
     return _then(_value.copyWith(
-      deviceId: deviceId == freezed
+      deviceId: freezed == deviceId
           ? _value.deviceId
           : deviceId // ignore: cast_nullable_to_non_nullable
               as MeterDeviceId?,
-      accessToken: accessToken == freezed
+      accessToken: freezed == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
               as SwitchBotAccessToken?,
-      appId: appId == freezed
+      appId: freezed == appId
           ? _value.appId
           : appId // ignore: cast_nullable_to_non_nullable
               as OpenWeatherAppId?,
-      zipCode: zipCode == freezed
+      zipCode: freezed == zipCode
           ? _value.zipCode
           : zipCode // ignore: cast_nullable_to_non_nullable
               as ZipCode?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SettingPageStateCopyWith<$Res>
+abstract class _$$_SettingPageStateCopyWith<$Res>
     implements $SettingPageStateCopyWith<$Res> {
-  factory _$SettingPageStateCopyWith(
-          _SettingPageState value, $Res Function(_SettingPageState) then) =
-      __$SettingPageStateCopyWithImpl<$Res>;
+  factory _$$_SettingPageStateCopyWith(
+          _$_SettingPageState value, $Res Function(_$_SettingPageState) then) =
+      __$$_SettingPageStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {MeterDeviceId? deviceId,
       SwitchBotAccessToken? accessToken,
@@ -109,16 +94,14 @@ abstract class _$SettingPageStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SettingPageStateCopyWithImpl<$Res>
-    extends _$SettingPageStateCopyWithImpl<$Res>
-    implements _$SettingPageStateCopyWith<$Res> {
-  __$SettingPageStateCopyWithImpl(
-      _SettingPageState _value, $Res Function(_SettingPageState) _then)
-      : super(_value, (v) => _then(v as _SettingPageState));
+class __$$_SettingPageStateCopyWithImpl<$Res>
+    extends _$SettingPageStateCopyWithImpl<$Res, _$_SettingPageState>
+    implements _$$_SettingPageStateCopyWith<$Res> {
+  __$$_SettingPageStateCopyWithImpl(
+      _$_SettingPageState _value, $Res Function(_$_SettingPageState) _then)
+      : super(_value, _then);
 
-  @override
-  _SettingPageState get _value => super._value as _SettingPageState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? deviceId = freezed,
@@ -126,20 +109,20 @@ class __$SettingPageStateCopyWithImpl<$Res>
     Object? appId = freezed,
     Object? zipCode = freezed,
   }) {
-    return _then(_SettingPageState(
-      deviceId: deviceId == freezed
+    return _then(_$_SettingPageState(
+      deviceId: freezed == deviceId
           ? _value.deviceId
           : deviceId // ignore: cast_nullable_to_non_nullable
               as MeterDeviceId?,
-      accessToken: accessToken == freezed
+      accessToken: freezed == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
               as SwitchBotAccessToken?,
-      appId: appId == freezed
+      appId: freezed == appId
           ? _value.appId
           : appId // ignore: cast_nullable_to_non_nullable
               as OpenWeatherAppId?,
-      zipCode: zipCode == freezed
+      zipCode: freezed == zipCode
           ? _value.zipCode
           : zipCode // ignore: cast_nullable_to_non_nullable
               as ZipCode?,
@@ -148,6 +131,7 @@ class __$SettingPageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SettingPageState implements _SettingPageState {
   const _$_SettingPageState(
       {this.deviceId, this.accessToken, this.appId, this.zipCode});
@@ -169,50 +153,44 @@ class _$_SettingPageState implements _SettingPageState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SettingPageState &&
+        (other.runtimeType == runtimeType &&
+            other is _$_SettingPageState &&
             (identical(other.deviceId, deviceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.deviceId, deviceId)) &&
+                other.deviceId == deviceId) &&
             (identical(other.accessToken, accessToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.accessToken, accessToken)) &&
-            (identical(other.appId, appId) ||
-                const DeepCollectionEquality().equals(other.appId, appId)) &&
-            (identical(other.zipCode, zipCode) ||
-                const DeepCollectionEquality().equals(other.zipCode, zipCode)));
+                other.accessToken == accessToken) &&
+            (identical(other.appId, appId) || other.appId == appId) &&
+            (identical(other.zipCode, zipCode) || other.zipCode == zipCode));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(deviceId) ^
-      const DeepCollectionEquality().hash(accessToken) ^
-      const DeepCollectionEquality().hash(appId) ^
-      const DeepCollectionEquality().hash(zipCode);
+      Object.hash(runtimeType, deviceId, accessToken, appId, zipCode);
 
   @JsonKey(ignore: true)
   @override
-  _$SettingPageStateCopyWith<_SettingPageState> get copyWith =>
-      __$SettingPageStateCopyWithImpl<_SettingPageState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SettingPageStateCopyWith<_$_SettingPageState> get copyWith =>
+      __$$_SettingPageStateCopyWithImpl<_$_SettingPageState>(this, _$identity);
 }
 
 abstract class _SettingPageState implements SettingPageState {
   const factory _SettingPageState(
-      {MeterDeviceId? deviceId,
-      SwitchBotAccessToken? accessToken,
-      OpenWeatherAppId? appId,
-      ZipCode? zipCode}) = _$_SettingPageState;
+      {final MeterDeviceId? deviceId,
+      final SwitchBotAccessToken? accessToken,
+      final OpenWeatherAppId? appId,
+      final ZipCode? zipCode}) = _$_SettingPageState;
 
   @override
-  MeterDeviceId? get deviceId => throw _privateConstructorUsedError;
+  MeterDeviceId? get deviceId;
   @override
-  SwitchBotAccessToken? get accessToken => throw _privateConstructorUsedError;
+  SwitchBotAccessToken? get accessToken;
   @override
-  OpenWeatherAppId? get appId => throw _privateConstructorUsedError;
+  OpenWeatherAppId? get appId;
   @override
-  ZipCode? get zipCode => throw _privateConstructorUsedError;
+  ZipCode? get zipCode;
   @override
   @JsonKey(ignore: true)
-  _$SettingPageStateCopyWith<_SettingPageState> get copyWith =>
+  _$$_SettingPageStateCopyWith<_$_SettingPageState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'daily_weather.dart';
 
@@ -10,34 +12,11 @@ part of 'daily_weather.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DailyWeather _$DailyWeatherFromJson(Map<String, dynamic> json) {
   return _DailyWeather.fromJson(json);
 }
-
-/// @nodoc
-class _$DailyWeatherTearOff {
-  const _$DailyWeatherTearOff();
-
-  _DailyWeather call(
-      {int dt = 0,
-      DailyTemperature? temp,
-      List<WeatherData> weather = const []}) {
-    return _DailyWeather(
-      dt: dt,
-      temp: temp,
-      weather: weather,
-    );
-  }
-
-  DailyWeather fromJson(Map<String, Object> json) {
-    return DailyWeather.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DailyWeather = _$DailyWeatherTearOff();
 
 /// @nodoc
 mixin _$DailyWeather {
@@ -55,61 +34,67 @@ mixin _$DailyWeather {
 abstract class $DailyWeatherCopyWith<$Res> {
   factory $DailyWeatherCopyWith(
           DailyWeather value, $Res Function(DailyWeather) then) =
-      _$DailyWeatherCopyWithImpl<$Res>;
+      _$DailyWeatherCopyWithImpl<$Res, DailyWeather>;
+  @useResult
   $Res call({int dt, DailyTemperature? temp, List<WeatherData> weather});
 
   $DailyTemperatureCopyWith<$Res>? get temp;
 }
 
 /// @nodoc
-class _$DailyWeatherCopyWithImpl<$Res> implements $DailyWeatherCopyWith<$Res> {
+class _$DailyWeatherCopyWithImpl<$Res, $Val extends DailyWeather>
+    implements $DailyWeatherCopyWith<$Res> {
   _$DailyWeatherCopyWithImpl(this._value, this._then);
 
-  final DailyWeather _value;
   // ignore: unused_field
-  final $Res Function(DailyWeather) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dt = freezed,
+    Object? dt = null,
     Object? temp = freezed,
-    Object? weather = freezed,
+    Object? weather = null,
   }) {
     return _then(_value.copyWith(
-      dt: dt == freezed
+      dt: null == dt
           ? _value.dt
           : dt // ignore: cast_nullable_to_non_nullable
               as int,
-      temp: temp == freezed
+      temp: freezed == temp
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
               as DailyTemperature?,
-      weather: weather == freezed
+      weather: null == weather
           ? _value.weather
           : weather // ignore: cast_nullable_to_non_nullable
               as List<WeatherData>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DailyTemperatureCopyWith<$Res>? get temp {
     if (_value.temp == null) {
       return null;
     }
 
     return $DailyTemperatureCopyWith<$Res>(_value.temp!, (value) {
-      return _then(_value.copyWith(temp: value));
+      return _then(_value.copyWith(temp: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$DailyWeatherCopyWith<$Res>
+abstract class _$$_DailyWeatherCopyWith<$Res>
     implements $DailyWeatherCopyWith<$Res> {
-  factory _$DailyWeatherCopyWith(
-          _DailyWeather value, $Res Function(_DailyWeather) then) =
-      __$DailyWeatherCopyWithImpl<$Res>;
+  factory _$$_DailyWeatherCopyWith(
+          _$_DailyWeather value, $Res Function(_$_DailyWeather) then) =
+      __$$_DailyWeatherCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int dt, DailyTemperature? temp, List<WeatherData> weather});
 
   @override
@@ -117,55 +102,60 @@ abstract class _$DailyWeatherCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DailyWeatherCopyWithImpl<$Res> extends _$DailyWeatherCopyWithImpl<$Res>
-    implements _$DailyWeatherCopyWith<$Res> {
-  __$DailyWeatherCopyWithImpl(
-      _DailyWeather _value, $Res Function(_DailyWeather) _then)
-      : super(_value, (v) => _then(v as _DailyWeather));
+class __$$_DailyWeatherCopyWithImpl<$Res>
+    extends _$DailyWeatherCopyWithImpl<$Res, _$_DailyWeather>
+    implements _$$_DailyWeatherCopyWith<$Res> {
+  __$$_DailyWeatherCopyWithImpl(
+      _$_DailyWeather _value, $Res Function(_$_DailyWeather) _then)
+      : super(_value, _then);
 
-  @override
-  _DailyWeather get _value => super._value as _DailyWeather;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dt = freezed,
+    Object? dt = null,
     Object? temp = freezed,
-    Object? weather = freezed,
+    Object? weather = null,
   }) {
-    return _then(_DailyWeather(
-      dt: dt == freezed
+    return _then(_$_DailyWeather(
+      dt: null == dt
           ? _value.dt
           : dt // ignore: cast_nullable_to_non_nullable
               as int,
-      temp: temp == freezed
+      temp: freezed == temp
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
               as DailyTemperature?,
-      weather: weather == freezed
-          ? _value.weather
+      weather: null == weather
+          ? _value._weather
           : weather // ignore: cast_nullable_to_non_nullable
               as List<WeatherData>,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_DailyWeather implements _DailyWeather {
-  _$_DailyWeather({this.dt = 0, this.temp, this.weather = const []});
+  _$_DailyWeather(
+      {this.dt = 0, this.temp, final List<WeatherData> weather = const []})
+      : _weather = weather;
 
   factory _$_DailyWeather.fromJson(Map<String, dynamic> json) =>
-      _$_$_DailyWeatherFromJson(json);
+      _$$_DailyWeatherFromJson(json);
 
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int dt;
   @override
   final DailyTemperature? temp;
-  @JsonKey(defaultValue: const [])
+  final List<WeatherData> _weather;
   @override
-  final List<WeatherData> weather;
+  @JsonKey()
+  List<WeatherData> get weather {
+    if (_weather is EqualUnmodifiableListView) return _weather;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_weather);
+  }
 
   @override
   String toString() {
@@ -175,50 +165,49 @@ class _$_DailyWeather implements _DailyWeather {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DailyWeather &&
-            (identical(other.dt, dt) ||
-                const DeepCollectionEquality().equals(other.dt, dt)) &&
-            (identical(other.temp, temp) ||
-                const DeepCollectionEquality().equals(other.temp, temp)) &&
-            (identical(other.weather, weather) ||
-                const DeepCollectionEquality().equals(other.weather, weather)));
+        (other.runtimeType == runtimeType &&
+            other is _$_DailyWeather &&
+            (identical(other.dt, dt) || other.dt == dt) &&
+            (identical(other.temp, temp) || other.temp == temp) &&
+            const DeepCollectionEquality().equals(other._weather, _weather));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(dt) ^
-      const DeepCollectionEquality().hash(temp) ^
-      const DeepCollectionEquality().hash(weather);
 
   @JsonKey(ignore: true)
   @override
-  _$DailyWeatherCopyWith<_DailyWeather> get copyWith =>
-      __$DailyWeatherCopyWithImpl<_DailyWeather>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, dt, temp, const DeepCollectionEquality().hash(_weather));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DailyWeatherCopyWith<_$_DailyWeather> get copyWith =>
+      __$$_DailyWeatherCopyWithImpl<_$_DailyWeather>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_DailyWeatherToJson(this);
+    return _$$_DailyWeatherToJson(
+      this,
+    );
   }
 }
 
 abstract class _DailyWeather implements DailyWeather {
   factory _DailyWeather(
-      {int dt,
-      DailyTemperature? temp,
-      List<WeatherData> weather}) = _$_DailyWeather;
+      {final int dt,
+      final DailyTemperature? temp,
+      final List<WeatherData> weather}) = _$_DailyWeather;
 
   factory _DailyWeather.fromJson(Map<String, dynamic> json) =
       _$_DailyWeather.fromJson;
 
   @override
-  int get dt => throw _privateConstructorUsedError;
+  int get dt;
   @override
-  DailyTemperature? get temp => throw _privateConstructorUsedError;
+  DailyTemperature? get temp;
   @override
-  List<WeatherData> get weather => throw _privateConstructorUsedError;
+  List<WeatherData> get weather;
   @override
   @JsonKey(ignore: true)
-  _$DailyWeatherCopyWith<_DailyWeather> get copyWith =>
+  _$$_DailyWeatherCopyWith<_$_DailyWeather> get copyWith =>
       throw _privateConstructorUsedError;
 }
