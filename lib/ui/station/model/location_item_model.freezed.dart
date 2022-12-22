@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'location_item_model.dart';
 
@@ -10,21 +12,7 @@ part of 'location_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LocationItemModelTearOff {
-  const _$LocationItemModelTearOff();
-
-  _LocationItemModel call({required String locationName}) {
-    return _LocationItemModel(
-      locationName: locationName,
-    );
-  }
-}
-
-/// @nodoc
-const $LocationItemModel = _$LocationItemModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LocationItemModel {
@@ -39,59 +27,61 @@ mixin _$LocationItemModel {
 abstract class $LocationItemModelCopyWith<$Res> {
   factory $LocationItemModelCopyWith(
           LocationItemModel value, $Res Function(LocationItemModel) then) =
-      _$LocationItemModelCopyWithImpl<$Res>;
+      _$LocationItemModelCopyWithImpl<$Res, LocationItemModel>;
+  @useResult
   $Res call({String locationName});
 }
 
 /// @nodoc
-class _$LocationItemModelCopyWithImpl<$Res>
+class _$LocationItemModelCopyWithImpl<$Res, $Val extends LocationItemModel>
     implements $LocationItemModelCopyWith<$Res> {
   _$LocationItemModelCopyWithImpl(this._value, this._then);
 
-  final LocationItemModel _value;
   // ignore: unused_field
-  final $Res Function(LocationItemModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? locationName = freezed,
+    Object? locationName = null,
   }) {
     return _then(_value.copyWith(
-      locationName: locationName == freezed
+      locationName: null == locationName
           ? _value.locationName
           : locationName // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$LocationItemModelCopyWith<$Res>
+abstract class _$$_LocationItemModelCopyWith<$Res>
     implements $LocationItemModelCopyWith<$Res> {
-  factory _$LocationItemModelCopyWith(
-          _LocationItemModel value, $Res Function(_LocationItemModel) then) =
-      __$LocationItemModelCopyWithImpl<$Res>;
+  factory _$$_LocationItemModelCopyWith(_$_LocationItemModel value,
+          $Res Function(_$_LocationItemModel) then) =
+      __$$_LocationItemModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String locationName});
 }
 
 /// @nodoc
-class __$LocationItemModelCopyWithImpl<$Res>
-    extends _$LocationItemModelCopyWithImpl<$Res>
-    implements _$LocationItemModelCopyWith<$Res> {
-  __$LocationItemModelCopyWithImpl(
-      _LocationItemModel _value, $Res Function(_LocationItemModel) _then)
-      : super(_value, (v) => _then(v as _LocationItemModel));
+class __$$_LocationItemModelCopyWithImpl<$Res>
+    extends _$LocationItemModelCopyWithImpl<$Res, _$_LocationItemModel>
+    implements _$$_LocationItemModelCopyWith<$Res> {
+  __$$_LocationItemModelCopyWithImpl(
+      _$_LocationItemModel _value, $Res Function(_$_LocationItemModel) _then)
+      : super(_value, _then);
 
-  @override
-  _LocationItemModel get _value => super._value as _LocationItemModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? locationName = freezed,
+    Object? locationName = null,
   }) {
-    return _then(_LocationItemModel(
-      locationName: locationName == freezed
+    return _then(_$_LocationItemModel(
+      locationName: null == locationName
           ? _value.locationName
           : locationName // ignore: cast_nullable_to_non_nullable
               as String,
@@ -100,6 +90,7 @@ class __$LocationItemModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LocationItemModel implements _LocationItemModel {
   _$_LocationItemModel({required this.locationName});
 
@@ -114,30 +105,31 @@ class _$_LocationItemModel implements _LocationItemModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LocationItemModel &&
+        (other.runtimeType == runtimeType &&
+            other is _$_LocationItemModel &&
             (identical(other.locationName, locationName) ||
-                const DeepCollectionEquality()
-                    .equals(other.locationName, locationName)));
+                other.locationName == locationName));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(locationName);
+  int get hashCode => Object.hash(runtimeType, locationName);
 
   @JsonKey(ignore: true)
   @override
-  _$LocationItemModelCopyWith<_LocationItemModel> get copyWith =>
-      __$LocationItemModelCopyWithImpl<_LocationItemModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LocationItemModelCopyWith<_$_LocationItemModel> get copyWith =>
+      __$$_LocationItemModelCopyWithImpl<_$_LocationItemModel>(
+          this, _$identity);
 }
 
 abstract class _LocationItemModel implements LocationItemModel {
-  factory _LocationItemModel({required String locationName}) =
+  factory _LocationItemModel({required final String locationName}) =
       _$_LocationItemModel;
 
   @override
-  String get locationName => throw _privateConstructorUsedError;
+  String get locationName;
   @override
   @JsonKey(ignore: true)
-  _$LocationItemModelCopyWith<_LocationItemModel> get copyWith =>
+  _$$_LocationItemModelCopyWith<_$_LocationItemModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

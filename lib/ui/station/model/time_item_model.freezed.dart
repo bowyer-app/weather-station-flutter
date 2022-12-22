@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'time_item_model.dart';
 
@@ -10,22 +12,7 @@ part of 'time_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TimeItemModelTearOff {
-  const _$TimeItemModelTearOff();
-
-  _TimeItemModel call({required int hour, required int minute}) {
-    return _TimeItemModel(
-      hour: hour,
-      minute: minute,
-    );
-  }
-}
-
-/// @nodoc
-const $TimeItemModel = _$TimeItemModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TimeItemModel {
@@ -41,69 +28,71 @@ mixin _$TimeItemModel {
 abstract class $TimeItemModelCopyWith<$Res> {
   factory $TimeItemModelCopyWith(
           TimeItemModel value, $Res Function(TimeItemModel) then) =
-      _$TimeItemModelCopyWithImpl<$Res>;
+      _$TimeItemModelCopyWithImpl<$Res, TimeItemModel>;
+  @useResult
   $Res call({int hour, int minute});
 }
 
 /// @nodoc
-class _$TimeItemModelCopyWithImpl<$Res>
+class _$TimeItemModelCopyWithImpl<$Res, $Val extends TimeItemModel>
     implements $TimeItemModelCopyWith<$Res> {
   _$TimeItemModelCopyWithImpl(this._value, this._then);
 
-  final TimeItemModel _value;
   // ignore: unused_field
-  final $Res Function(TimeItemModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? hour = freezed,
-    Object? minute = freezed,
+    Object? hour = null,
+    Object? minute = null,
   }) {
     return _then(_value.copyWith(
-      hour: hour == freezed
+      hour: null == hour
           ? _value.hour
           : hour // ignore: cast_nullable_to_non_nullable
               as int,
-      minute: minute == freezed
+      minute: null == minute
           ? _value.minute
           : minute // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TimeItemModelCopyWith<$Res>
+abstract class _$$_TimeItemModelCopyWith<$Res>
     implements $TimeItemModelCopyWith<$Res> {
-  factory _$TimeItemModelCopyWith(
-          _TimeItemModel value, $Res Function(_TimeItemModel) then) =
-      __$TimeItemModelCopyWithImpl<$Res>;
+  factory _$$_TimeItemModelCopyWith(
+          _$_TimeItemModel value, $Res Function(_$_TimeItemModel) then) =
+      __$$_TimeItemModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int hour, int minute});
 }
 
 /// @nodoc
-class __$TimeItemModelCopyWithImpl<$Res>
-    extends _$TimeItemModelCopyWithImpl<$Res>
-    implements _$TimeItemModelCopyWith<$Res> {
-  __$TimeItemModelCopyWithImpl(
-      _TimeItemModel _value, $Res Function(_TimeItemModel) _then)
-      : super(_value, (v) => _then(v as _TimeItemModel));
+class __$$_TimeItemModelCopyWithImpl<$Res>
+    extends _$TimeItemModelCopyWithImpl<$Res, _$_TimeItemModel>
+    implements _$$_TimeItemModelCopyWith<$Res> {
+  __$$_TimeItemModelCopyWithImpl(
+      _$_TimeItemModel _value, $Res Function(_$_TimeItemModel) _then)
+      : super(_value, _then);
 
-  @override
-  _TimeItemModel get _value => super._value as _TimeItemModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? hour = freezed,
-    Object? minute = freezed,
+    Object? hour = null,
+    Object? minute = null,
   }) {
-    return _then(_TimeItemModel(
-      hour: hour == freezed
+    return _then(_$_TimeItemModel(
+      hour: null == hour
           ? _value.hour
           : hour // ignore: cast_nullable_to_non_nullable
               as int,
-      minute: minute == freezed
+      minute: null == minute
           ? _value.minute
           : minute // ignore: cast_nullable_to_non_nullable
               as int,
@@ -112,6 +101,7 @@ class __$TimeItemModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_TimeItemModel implements _TimeItemModel {
   _$_TimeItemModel({required this.hour, required this.minute});
 
@@ -128,35 +118,32 @@ class _$_TimeItemModel implements _TimeItemModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TimeItemModel &&
-            (identical(other.hour, hour) ||
-                const DeepCollectionEquality().equals(other.hour, hour)) &&
-            (identical(other.minute, minute) ||
-                const DeepCollectionEquality().equals(other.minute, minute)));
+        (other.runtimeType == runtimeType &&
+            other is _$_TimeItemModel &&
+            (identical(other.hour, hour) || other.hour == hour) &&
+            (identical(other.minute, minute) || other.minute == minute));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(hour) ^
-      const DeepCollectionEquality().hash(minute);
+  int get hashCode => Object.hash(runtimeType, hour, minute);
 
   @JsonKey(ignore: true)
   @override
-  _$TimeItemModelCopyWith<_TimeItemModel> get copyWith =>
-      __$TimeItemModelCopyWithImpl<_TimeItemModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TimeItemModelCopyWith<_$_TimeItemModel> get copyWith =>
+      __$$_TimeItemModelCopyWithImpl<_$_TimeItemModel>(this, _$identity);
 }
 
 abstract class _TimeItemModel implements TimeItemModel {
-  factory _TimeItemModel({required int hour, required int minute}) =
+  factory _TimeItemModel({required final int hour, required final int minute}) =
       _$_TimeItemModel;
 
   @override
-  int get hour => throw _privateConstructorUsedError;
+  int get hour;
   @override
-  int get minute => throw _privateConstructorUsedError;
+  int get minute;
   @override
   @JsonKey(ignore: true)
-  _$TimeItemModelCopyWith<_TimeItemModel> get copyWith =>
+  _$$_TimeItemModelCopyWith<_$_TimeItemModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

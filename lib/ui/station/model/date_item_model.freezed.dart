@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'date_item_model.dart';
 
@@ -10,28 +12,7 @@ part of 'date_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DateItemModelTearOff {
-  const _$DateItemModelTearOff();
-
-  _DateItemModel call(
-      {required int year,
-      required int month,
-      required int day,
-      required int weekday}) {
-    return _DateItemModel(
-      year: year,
-      month: month,
-      day: day,
-      weekday: weekday,
-    );
-  }
-}
-
-/// @nodoc
-const $DateItemModel = _$DateItemModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DateItemModel {
@@ -49,89 +30,91 @@ mixin _$DateItemModel {
 abstract class $DateItemModelCopyWith<$Res> {
   factory $DateItemModelCopyWith(
           DateItemModel value, $Res Function(DateItemModel) then) =
-      _$DateItemModelCopyWithImpl<$Res>;
+      _$DateItemModelCopyWithImpl<$Res, DateItemModel>;
+  @useResult
   $Res call({int year, int month, int day, int weekday});
 }
 
 /// @nodoc
-class _$DateItemModelCopyWithImpl<$Res>
+class _$DateItemModelCopyWithImpl<$Res, $Val extends DateItemModel>
     implements $DateItemModelCopyWith<$Res> {
   _$DateItemModelCopyWithImpl(this._value, this._then);
 
-  final DateItemModel _value;
   // ignore: unused_field
-  final $Res Function(DateItemModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? year = freezed,
-    Object? month = freezed,
-    Object? day = freezed,
-    Object? weekday = freezed,
+    Object? year = null,
+    Object? month = null,
+    Object? day = null,
+    Object? weekday = null,
   }) {
     return _then(_value.copyWith(
-      year: year == freezed
+      year: null == year
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as int,
-      month: month == freezed
+      month: null == month
           ? _value.month
           : month // ignore: cast_nullable_to_non_nullable
               as int,
-      day: day == freezed
+      day: null == day
           ? _value.day
           : day // ignore: cast_nullable_to_non_nullable
               as int,
-      weekday: weekday == freezed
+      weekday: null == weekday
           ? _value.weekday
           : weekday // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DateItemModelCopyWith<$Res>
+abstract class _$$_DateItemModelCopyWith<$Res>
     implements $DateItemModelCopyWith<$Res> {
-  factory _$DateItemModelCopyWith(
-          _DateItemModel value, $Res Function(_DateItemModel) then) =
-      __$DateItemModelCopyWithImpl<$Res>;
+  factory _$$_DateItemModelCopyWith(
+          _$_DateItemModel value, $Res Function(_$_DateItemModel) then) =
+      __$$_DateItemModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int year, int month, int day, int weekday});
 }
 
 /// @nodoc
-class __$DateItemModelCopyWithImpl<$Res>
-    extends _$DateItemModelCopyWithImpl<$Res>
-    implements _$DateItemModelCopyWith<$Res> {
-  __$DateItemModelCopyWithImpl(
-      _DateItemModel _value, $Res Function(_DateItemModel) _then)
-      : super(_value, (v) => _then(v as _DateItemModel));
+class __$$_DateItemModelCopyWithImpl<$Res>
+    extends _$DateItemModelCopyWithImpl<$Res, _$_DateItemModel>
+    implements _$$_DateItemModelCopyWith<$Res> {
+  __$$_DateItemModelCopyWithImpl(
+      _$_DateItemModel _value, $Res Function(_$_DateItemModel) _then)
+      : super(_value, _then);
 
-  @override
-  _DateItemModel get _value => super._value as _DateItemModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? year = freezed,
-    Object? month = freezed,
-    Object? day = freezed,
-    Object? weekday = freezed,
+    Object? year = null,
+    Object? month = null,
+    Object? day = null,
+    Object? weekday = null,
   }) {
-    return _then(_DateItemModel(
-      year: year == freezed
+    return _then(_$_DateItemModel(
+      year: null == year
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as int,
-      month: month == freezed
+      month: null == month
           ? _value.month
           : month // ignore: cast_nullable_to_non_nullable
               as int,
-      day: day == freezed
+      day: null == day
           ? _value.day
           : day // ignore: cast_nullable_to_non_nullable
               as int,
-      weekday: weekday == freezed
+      weekday: null == weekday
           ? _value.weekday
           : weekday // ignore: cast_nullable_to_non_nullable
               as int,
@@ -140,6 +123,7 @@ class __$DateItemModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DateItemModel implements _DateItemModel {
   _$_DateItemModel(
       {required this.year,
@@ -164,48 +148,41 @@ class _$_DateItemModel implements _DateItemModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DateItemModel &&
-            (identical(other.year, year) ||
-                const DeepCollectionEquality().equals(other.year, year)) &&
-            (identical(other.month, month) ||
-                const DeepCollectionEquality().equals(other.month, month)) &&
-            (identical(other.day, day) ||
-                const DeepCollectionEquality().equals(other.day, day)) &&
-            (identical(other.weekday, weekday) ||
-                const DeepCollectionEquality().equals(other.weekday, weekday)));
+        (other.runtimeType == runtimeType &&
+            other is _$_DateItemModel &&
+            (identical(other.year, year) || other.year == year) &&
+            (identical(other.month, month) || other.month == month) &&
+            (identical(other.day, day) || other.day == day) &&
+            (identical(other.weekday, weekday) || other.weekday == weekday));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(year) ^
-      const DeepCollectionEquality().hash(month) ^
-      const DeepCollectionEquality().hash(day) ^
-      const DeepCollectionEquality().hash(weekday);
+  int get hashCode => Object.hash(runtimeType, year, month, day, weekday);
 
   @JsonKey(ignore: true)
   @override
-  _$DateItemModelCopyWith<_DateItemModel> get copyWith =>
-      __$DateItemModelCopyWithImpl<_DateItemModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DateItemModelCopyWith<_$_DateItemModel> get copyWith =>
+      __$$_DateItemModelCopyWithImpl<_$_DateItemModel>(this, _$identity);
 }
 
 abstract class _DateItemModel implements DateItemModel {
   factory _DateItemModel(
-      {required int year,
-      required int month,
-      required int day,
-      required int weekday}) = _$_DateItemModel;
+      {required final int year,
+      required final int month,
+      required final int day,
+      required final int weekday}) = _$_DateItemModel;
 
   @override
-  int get year => throw _privateConstructorUsedError;
+  int get year;
   @override
-  int get month => throw _privateConstructorUsedError;
+  int get month;
   @override
-  int get day => throw _privateConstructorUsedError;
+  int get day;
   @override
-  int get weekday => throw _privateConstructorUsedError;
+  int get weekday;
   @override
   @JsonKey(ignore: true)
-  _$DateItemModelCopyWith<_DateItemModel> get copyWith =>
+  _$$_DateItemModelCopyWith<_$_DateItemModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
