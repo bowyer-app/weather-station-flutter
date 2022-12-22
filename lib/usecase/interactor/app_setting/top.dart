@@ -9,48 +9,62 @@ import '../../../gateway/data/repository/app_setting_repository_impl.dart';
 import '../../usecase/app_setting/top.dart';
 
 final appSettingTopUsecaseProvider = Provider<AppSettingTopUseCase>(
-    (ref) => AppSettingTopInteractor(ref.read(appSettingRepositoryProvider)));
+  (ref) => AppSettingTopInteractor(
+    settingRepository: ref.read(appSettingRepositoryProvider),
+  ),
+);
 
 class AppSettingTopInteractor implements AppSettingTopUseCase {
-  AppSettingTopInteractor(this._settingRepository);
+  AppSettingTopInteractor({
+    required this.settingRepository,
+  });
 
-  final AppSettingRepository _settingRepository;
+  final AppSettingRepository settingRepository;
 
   @override
   Future<MeterDeviceId?> loadMeterDeviceId() =>
-      _settingRepository.loadMeterDeviceId();
+      settingRepository.loadMeterDeviceId();
 
   @override
   Future<OpenWeatherAppId?> loadOpenWeatherAppId() =>
-      _settingRepository.loadOpenWeatherAppId();
+      settingRepository.loadOpenWeatherAppId();
 
   @override
   Future<SwitchBotAccessToken?> loadSwitchBotAccessToken() =>
-      _settingRepository.loadSwitchBotAccessToken();
+      settingRepository.loadSwitchBotAccessToken();
 
   @override
-  Future<void> saveMeterDeviceId(MeterDeviceId deviceId) =>
-      _settingRepository.saveMeterDeviceId(
+  Future<void> saveMeterDeviceId({
+    required MeterDeviceId deviceId,
+  }) =>
+      settingRepository.saveMeterDeviceId(
         deviceId: deviceId,
       );
 
   @override
-  Future<void> saveOpenWeatherAppId(OpenWeatherAppId appId) =>
-      _settingRepository.saveOpenWeatherAppId(
+  Future<void> saveOpenWeatherAppId({
+    required OpenWeatherAppId appId,
+  }) =>
+      settingRepository.saveOpenWeatherAppId(
         appId: appId,
       );
 
   @override
-  Future<void> saveSwitchBotAccessToken(SwitchBotAccessToken accessToken) =>
-      _settingRepository.saveSwitchBotAccessToken(
+  Future<void> saveSwitchBotAccessToken({
+    required SwitchBotAccessToken accessToken,
+  }) =>
+      settingRepository.saveSwitchBotAccessToken(
         accessToken: accessToken,
       );
 
   @override
-  Future<ZipCode?> loadZipCode() => _settingRepository.loadZipCode();
+  Future<ZipCode?> loadZipCode() => settingRepository.loadZipCode();
 
   @override
-  Future<void> saveZipCode(ZipCode zipCode) => _settingRepository.saveZipCode(
+  Future<void> saveZipCode({
+    required ZipCode zipCode,
+  }) =>
+      settingRepository.saveZipCode(
         zipCode: zipCode,
       );
 }

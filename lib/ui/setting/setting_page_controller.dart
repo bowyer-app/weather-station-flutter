@@ -35,31 +35,47 @@ class SettingPageController extends StateNotifier<SettingPageState> {
     final meterDeviceId = MeterDeviceId(
       value: deviceId,
     );
-    await _settingTopUseCase.saveMeterDeviceId(meterDeviceId);
-    state = state.copyWith.call(deviceId: meterDeviceId);
+    await _settingTopUseCase.saveMeterDeviceId(
+      deviceId: meterDeviceId,
+    );
+    state = state.copyWith.call(
+      deviceId: meterDeviceId,
+    );
   }
 
   Future<void> saveSwitchBotAccessToken(String accessToken) async {
     final switchBotAccessToken = SwitchBotAccessToken(
       value: accessToken,
     );
-    await _settingTopUseCase.saveSwitchBotAccessToken(switchBotAccessToken);
-    state = state.copyWith.call(accessToken: switchBotAccessToken);
+    await _settingTopUseCase.saveSwitchBotAccessToken(
+      accessToken: switchBotAccessToken,
+    );
+    state = state.copyWith.call(
+      accessToken: switchBotAccessToken,
+    );
   }
 
   Future<void> saveOpenWeatherAppId(String appId) async {
     final weatherAppId = OpenWeatherAppId(
       value: appId,
     );
-    await _settingTopUseCase.saveOpenWeatherAppId(weatherAppId);
-    state = state.copyWith.call(appId: weatherAppId);
+    await _settingTopUseCase.saveOpenWeatherAppId(
+      appId: weatherAppId,
+    );
+    state = state.copyWith.call(
+      appId: weatherAppId,
+    );
   }
 
   Future<void> saveZipCode(String zipCode) async {
     final zipCodeVO = ZipCode(
       value: zipCode,
     );
-    await _settingTopUseCase.saveZipCode(zipCodeVO);
-    state = state.copyWith.call(zipCode: zipCodeVO);
+    await _settingTopUseCase.saveZipCode(
+      zipCode: zipCodeVO,
+    );
+    state = state.copyWith.call(
+      zipCode: zipCodeVO,
+    );
   }
 }

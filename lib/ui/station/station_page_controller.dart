@@ -133,7 +133,9 @@ class StationPageController extends StateNotifier<StationPageState> {
     if (zipCode == null) {
       return;
     }
-    final geolocation = await _stationTopUseCase.loadGeolocation(zipCode.value);
+    final geolocation = await _stationTopUseCase.loadGeolocation(
+      zipCode: zipCode.value,
+    );
     if (geolocation == null) {
       return;
     }

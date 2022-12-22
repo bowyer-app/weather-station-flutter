@@ -20,17 +20,24 @@ abstract class StationTopUseCase {
   Future<ZipCode?> loadZipCode();
 
   /// [Geolocation]を取得
-  Future<Geolocation?> loadGeolocation(String zipCode);
+  Future<Geolocation?> loadGeolocation({
+    required String zipCode,
+  });
 
   /// [Weather]を取得
-  Future<Weather> loadCurrentWeather(
-      {required OpenWeatherAppId appId, required Geolocation geolocation});
+  Future<Weather> loadCurrentWeather({
+    required OpenWeatherAppId appId,
+    required Geolocation geolocation,
+  });
 
   /// [List<Weather>]を取得
-  Future<List<Weather>> loadWeeklyWeather(
-      {required OpenWeatherAppId appId, required Geolocation geolocation});
+  Future<List<Weather>> loadWeeklyWeather({
+    required OpenWeatherAppId appId,
+    required Geolocation geolocation,
+  });
 
-  Future<RoomCondition> loadRoomCondition(
-      {required MeterDeviceId deviceId,
-      required SwitchBotAccessToken accessToken});
+  Future<RoomCondition> loadRoomCondition({
+    required MeterDeviceId deviceId,
+    required SwitchBotAccessToken accessToken,
+  });
 }
