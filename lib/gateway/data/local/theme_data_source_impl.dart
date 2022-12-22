@@ -5,26 +5,38 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'app_shared_preferences.dart';
 import 'theme_data_source.dart';
 
-final themeDataSourceProvider =
-    Provider((ref) => ThemeDataSourceImpl(ref.read(preferenceProvider)));
+final themeDataSourceProvider = Provider(
+  (ref) => ThemeDataSourceImpl(
+    appPreference: ref.read(preferenceProvider),
+  ),
+);
 
 class ThemeDataSourceImpl extends ThemeDataSource {
-  ThemeDataSourceImpl(this._prefs);
+  ThemeDataSourceImpl({
+    required this.appPreference,
+  });
 
   static const String keyThemeMode = 'theme_mode';
 
-  final AppSharedPreference _prefs;
+  final AppSharedPreference appPreference;
 
   @override
   Future<ThemeMode?> loadThemeMode() async {
-    final prefs = await _prefs.getInstance();
+    final prefs = await appPreference.getInstance();
     return EnumToString.fromString(
-        ThemeMode.values, prefs.getString(keyThemeMode)!);
+      ThemeMode.values,
+      prefs.getString(keyThemeMode)!,
+    );
   }
 
   @override
-  Future<void> saveThemeMode(ThemeMode? theme) async {
-    final prefs = await _prefs.getInstance();
-    prefs.setString(keyThemeMode, EnumToString.convertToString(theme));
+  Future<void> saveThemeMode({
+    ThemeMode? theme,
+  }) async {
+    final prefs = await appPreference.getInstance();
+    prefs.setString(
+      keyThemeMode,
+      EnumToString.convertToString(theme),
+    );
   }
 }

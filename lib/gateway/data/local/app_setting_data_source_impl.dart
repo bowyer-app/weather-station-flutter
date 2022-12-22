@@ -7,13 +7,18 @@ import '../../../domain/model/zip_code.dart';
 import 'app_setting_data_source.dart';
 import 'app_shared_preferences.dart';
 
-final appSettingDataSourceProvider =
-    Provider((ref) => AppSettingDataSourceImpl(ref.read(preferenceProvider)));
+final appSettingDataSourceProvider = Provider(
+  (ref) => AppSettingDataSourceImpl(
+    appPreference: ref.read(preferenceProvider),
+  ),
+);
 
 class AppSettingDataSourceImpl extends AppSettingDataSource {
-  AppSettingDataSourceImpl(this._prefs);
+  AppSettingDataSourceImpl({
+    required this.appPreference,
+  });
 
-  final AppSharedPreference _prefs;
+  final AppSharedPreference appPreference;
 
   static const String _keyDeviceId = "device_id";
   static const String _keyAccessToken = "access_token";
@@ -22,7 +27,7 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
 
   @override
   Future<MeterDeviceId?> loadMeterDeviceId() async {
-    final prefs = await _prefs.getInstance();
+    final prefs = await appPreference.getInstance();
     final deviceId = prefs.getString(_keyDeviceId);
     if (deviceId == null) {
       return null;
@@ -34,13 +39,13 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
 
   @override
   Future<void> saveMeterDeviceId(MeterDeviceId deviceId) async {
-    final prefs = await _prefs.getInstance();
+    final prefs = await appPreference.getInstance();
     prefs.setString(_keyDeviceId, deviceId.value);
   }
 
   @override
   Future<SwitchBotAccessToken?> loadSwitchBotAccessToken() async {
-    final prefs = await _prefs.getInstance();
+    final prefs = await appPreference.getInstance();
     final accessToken = prefs.getString(_keyAccessToken);
     if (accessToken == null) {
       return null;
@@ -53,13 +58,13 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
   @override
   Future<void> saveSwitchBotAccessToken(
       SwitchBotAccessToken accessToken) async {
-    final prefs = await _prefs.getInstance();
+    final prefs = await appPreference.getInstance();
     prefs.setString(_keyAccessToken, accessToken.value);
   }
 
   @override
   Future<OpenWeatherAppId?> loadOpenWeatherAppId() async {
-    final prefs = await _prefs.getInstance();
+    final prefs = await appPreference.getInstance();
     final appId = prefs.getString(_keyOpenWeatherAppId);
     if (appId == null) {
       return null;
@@ -71,13 +76,13 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
 
   @override
   Future<void> saveOpenWeatherAppId(OpenWeatherAppId appId) async {
-    final prefs = await _prefs.getInstance();
+    final prefs = await appPreference.getInstance();
     prefs.setString(_keyOpenWeatherAppId, appId.value);
   }
 
   @override
   Future<ZipCode?> loadZipCode() async {
-    final prefs = await _prefs.getInstance();
+    final prefs = await appPreference.getInstance();
     final zipCode = prefs.getString(_keyZipCode);
     if (zipCode == null) {
       return null;
@@ -89,7 +94,7 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
 
   @override
   Future<void> saveZipCode(ZipCode zipCode) async {
-    final prefs = await _prefs.getInstance();
+    final prefs = await appPreference.getInstance();
     prefs.setString(_keyZipCode, zipCode.value);
   }
 }
