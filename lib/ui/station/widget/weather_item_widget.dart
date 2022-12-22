@@ -32,7 +32,10 @@ class WeatherItemWidget extends StatelessWidget {
 
   Widget _buildMaxTemperature(L10n message) {
     var children = <Widget>[];
-    children.add(UpIconWidget(10, ColorName.textRed));
+    children.add(UpIconWidget(
+      size: 10,
+      color: ColorName.textRed,
+    ));
     var text = Container(
       margin: const EdgeInsets.only(left: 4),
       child: Text(
