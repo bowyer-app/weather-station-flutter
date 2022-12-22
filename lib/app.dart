@@ -9,12 +9,12 @@ import 'ui/app_theme.dart';
 import 'ui/setting/setting_page.dart';
 import 'ui/station/station_page.dart';
 
-class App extends HookWidget {
+class App extends HookConsumerWidget {
   @override
-  Widget build(BuildContext context) {
-    final appTheme = context.read(appThemeNotifierProvider);
+  Widget build(BuildContext context,WidgetRef ref) {
+    final appTheme = ref.read(appThemeNotifierProvider);
     final setting =
-        useProvider(appThemeNotifierProvider.select((value) => value.setting));
+        ref.watch(appThemeNotifierProvider.select((value) => value.setting));
     useFuture(useMemoized(appTheme.themeMode, [setting]),
         initialData: ThemeMode.light);
     return GetMaterialApp(
