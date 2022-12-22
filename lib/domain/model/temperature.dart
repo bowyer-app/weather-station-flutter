@@ -2,5 +2,7 @@
 class Temperature {
   final double value;
 
-  Temperature(this.value);
+  Temperature({
+    required this.value,
+  });
 }

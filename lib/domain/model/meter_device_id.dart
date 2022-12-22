@@ -2,5 +2,7 @@
 class MeterDeviceId {
   final String value;
 
-  MeterDeviceId(this.value);
+  MeterDeviceId({
+    required this.value,
+  });
 }

@@ -2,5 +2,7 @@
 class Humidity {
   final int value;
 
-  Humidity(this.value);
+  Humidity({
+    required this.value,
+  });
 }

@@ -2,5 +2,7 @@
 class WeatherDescription {
   final String value;
 
-  WeatherDescription(this.value);
+  WeatherDescription({
+    required this.value,
+  });
 }

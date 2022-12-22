@@ -5,6 +5,11 @@ import '../model/remote/meter_status_response.dart';
 
 extension MeterStatusResponseExt on MeterStatusResponse {
   RoomCondition toRoomCondition() => RoomCondition(
-      Temperature(meterBody?.temperature ?? 0.0),
-      Humidity(meterBody?.humidity ?? 0));
+        temperature: Temperature(
+          value: meterBody?.temperature ?? 0.0,
+        ),
+        humidity: Humidity(
+          value: meterBody?.humidity ?? 0,
+        ),
+      );
 }

@@ -2,5 +2,7 @@
 class OpenWeatherAppId {
   final String value;
 
-  OpenWeatherAppId(this.value);
+  OpenWeatherAppId({
+    required this.value,
+  });
 }

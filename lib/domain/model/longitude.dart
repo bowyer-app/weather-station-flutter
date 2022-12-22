@@ -2,5 +2,7 @@
 class Longitude {
   final double value;
 
-  Longitude(this.value);
+  Longitude({
+    required this.value,
+  });
 }

@@ -63,8 +63,17 @@ class StationTopInteractor implements StationTopUseCase {
     var name = "${placemark.administrativeArea} "
         "${placemark.locality}${placemark.subLocality}";
 
-    return Future.value(Geolocation(
-        Latitude(position.latitude), Longitude(position.longitude), name));
+    return Future.value(
+      Geolocation(
+        latitude: Latitude(
+          value: position.latitude,
+        ),
+        longitude: Longitude(
+          value: position.longitude,
+        ),
+        localeName: name,
+      ),
+    );
   }
 
   @override

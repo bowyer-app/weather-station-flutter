@@ -7,5 +7,9 @@ class Geolocation {
   final Longitude longitude;
   final String localeName;
 
-  Geolocation(this.latitude, this.longitude, this.localeName);
+  Geolocation({
+    required this.latitude,
+    required this.longitude,
+    required this.localeName,
+  });
 }
