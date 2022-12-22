@@ -4,7 +4,8 @@ import '../../../domain/model/switch_bot_access_token.dart';
 
 // ignore: one_member_abstracts
 abstract class MeterRepository {
-  Future<RoomCondition> getCurrentRoomCondition(
-      {required MeterDeviceId deviceId,
-      required SwitchBotAccessToken accessToken});
+  Future<RoomCondition> getCurrentRoomCondition({
+    required MeterDeviceId deviceId,
+    required SwitchBotAccessToken accessToken,
+  });
 }

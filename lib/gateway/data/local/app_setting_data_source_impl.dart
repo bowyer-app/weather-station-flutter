@@ -38,7 +38,9 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
   }
 
   @override
-  Future<void> saveMeterDeviceId(MeterDeviceId deviceId) async {
+  Future<void> saveMeterDeviceId({
+    required MeterDeviceId deviceId,
+  }) async {
     final prefs = await appPreference.getInstance();
     prefs.setString(_keyDeviceId, deviceId.value);
   }
@@ -56,8 +58,9 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
   }
 
   @override
-  Future<void> saveSwitchBotAccessToken(
-      SwitchBotAccessToken accessToken) async {
+  Future<void> saveSwitchBotAccessToken({
+    required SwitchBotAccessToken accessToken,
+  }) async {
     final prefs = await appPreference.getInstance();
     prefs.setString(_keyAccessToken, accessToken.value);
   }
@@ -75,7 +78,9 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
   }
 
   @override
-  Future<void> saveOpenWeatherAppId(OpenWeatherAppId appId) async {
+  Future<void> saveOpenWeatherAppId({
+    required OpenWeatherAppId appId,
+  }) async {
     final prefs = await appPreference.getInstance();
     prefs.setString(_keyOpenWeatherAppId, appId.value);
   }
@@ -93,7 +98,9 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
   }
 
   @override
-  Future<void> saveZipCode(ZipCode zipCode) async {
+  Future<void> saveZipCode({
+    required ZipCode zipCode,
+  }) async {
     final prefs = await appPreference.getInstance();
     prefs.setString(_keyZipCode, zipCode.value);
   }
