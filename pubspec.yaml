@@ -17,6 +17,7 @@ dependencies:
   # For Architecture
   flutter_hooks: ^0.18.5+1
   hooks_riverpod: ^2.1.1
+  state_notifier: ^0.7.2+1
 
   # For Networking
   dio: ^4.0.6
@@ -51,6 +52,9 @@ dependencies:
 
 module:
   androidX: true
+
+dependency_overrides:
+  platform: ^3.1.0
 
 dev_dependencies:
   flutter_test:
