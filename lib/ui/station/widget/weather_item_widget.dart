@@ -48,7 +48,10 @@ class WeatherItemWidget extends StatelessWidget {
 
   Widget _buildMinTemperature(L10n message) {
     var children = <Widget>[];
-    children.add(DownIconWidget(10, ColorName.textBlue));
+    children.add(DownIconWidget(
+      size: 10,
+      color: ColorName.textBlue,
+    ));
     var text = Container(
       margin: const EdgeInsets.only(left: 4),
       child: Text(
