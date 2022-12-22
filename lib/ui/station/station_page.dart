@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sprintf/sprintf.dart';
@@ -17,47 +15,28 @@ import 'widget/todays_temperature_widget.dart';
 import 'widget/todays_weather_widget.dart';
 import 'widget/weekly_weather_item_widget.dart';
 
-class StationPage extends StatelessWidget {
+class StationPage extends HookConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    Wakelock.enable();
+    final controller = ref.read(stationPageControllerProvider.notifier);
+    controller.onBuildStart();
+
+    return const Scaffold(
+      body: _Body(),
+    );
+  }
+}
+
+class _Body extends StatelessWidget {
+  const _Body();
+
   @override
   Widget build(BuildContext context) {
-    Wakelock.enable();
-    final controller = context.read(stationPageControllerProvider.notifier);
-    controller.onBuildStart();
-    var message = L10n.of(context)!;
-
-    return Scaffold(
-      body: _buildBody(message),
-    );
-  }
-
-  Widget _buildHeader() {
-    var children = <Widget>[];
-    children.add(_buildLocationWidget());
-    children.add(Container(
-      margin: const EdgeInsets.fromLTRB(0, 16, 16, 0),
-      child: IconButton(
-          icon: const Icon(
-            Icons.settings,
-            color: ColorName.objectWhite,
-          ),
-          onPressed: () {
-            Get.toNamed(Constants.pageSetting);
-          }),
-    ));
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: children,
-      ),
-    );
-  }
-
-  Widget _buildBody(L10n message) {
-    var children = <Widget>[];
-    children.add(_buildHeader());
-    children.add(_buildWeatherWidget());
-    children.add(_buildDateTimeWidget());
+    final children = <Widget>[];
+    children.add(const _Header());
+    children.add(const _Weather());
+    children.add(const _DateTime());
     return Container(
       color: ColorName.backgroundStation,
       child: Column(
@@ -66,19 +45,16 @@ class StationPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildLocationWidget() {
-    return HookBuilder(builder: (context) {
-      final locationItemModel = useProvider(stationPageControllerProvider
-          .select((value) => value.locationItemModel));
-      return LocationWidget(locationItemModel);
-    });
-  }
+class _Header extends StatelessWidget {
+  const _Header();
 
-  Widget _buildWeatherWidget() {
-    var children = <Widget>[];
-    children.add(_buildTodaysWeatherItem());
-    children.add(_buildWeeklyWeatherItem());
+  @override
+  Widget build(BuildContext context) {
+    final children = <Widget>[];
+    children.add(const _LocationWidget());
+    children.add(const _SettingButton());
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -87,111 +63,199 @@ class StationPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  /// 日付関連のWidget作成
-  Widget _buildDateTimeWidget() {
-    var children = <Widget>[];
-    children.add(_buildNowDateWidget());
-    children.add(_buildNowTimeWidget());
+class _LocationWidget extends HookConsumerWidget {
+  const _LocationWidget();
 
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final locationItemModel = ref.watch(stationPageControllerProvider
+        .select((value) => value.locationItemModel));
+    return LocationWidget(locationItemModel);
+  }
+}
+
+class _SettingButton extends StatelessWidget {
+  const _SettingButton();
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: children,
-      ),
-    );
-  }
-
-  Widget _buildNowTimeWidget() {
-    return HookBuilder(builder: (context) {
-      final message = L10n.of(useContext())!;
-      final timeItemModel = useProvider(
-          stationPageControllerProvider.select((value) => value.timeItemModel));
-      return Container(
-        margin: const EdgeInsets.only(right: 16, bottom: 16),
-        child: Text(
-          sprintf(
-              message.nowTimeText, [timeItemModel.hour, timeItemModel.minute]),
-          style: const TextStyle(color: ColorName.textWhite, fontSize: 100),
+      margin: const EdgeInsets.fromLTRB(0, 16, 16, 0),
+      child: IconButton(
+        icon: const Icon(
+          Icons.settings,
+          color: ColorName.objectWhite,
         ),
-      );
-    });
-  }
-
-  Widget _buildNowDateWidget() {
-    return HookBuilder(builder: (context) {
-      final message = L10n.of(useContext())!;
-      final nowDateItemModel = useProvider(stationPageControllerProvider
-          .select((value) => value.nowDateItemModel));
-      return Container(
-        margin: const EdgeInsets.only(left: 16),
-        child: Text(
-            sprintf(message.nowDateText, [
-              nowDateItemModel.year,
-              nowDateItemModel.month,
-              nowDateItemModel.day,
-              nowDateItemModel.weekday.from(message)
-            ]),
-            style: const TextStyle(color: ColorName.textWhite, fontSize: 40)),
-      );
-    });
-  }
-
-  /// 天気予報エリアのWidget生成
-  Widget _buildRoomConditionWidget() {
-    return HookBuilder(builder: (context) {
-      final roomConditionItemModel = useProvider(stationPageControllerProvider
-          .select((value) => value.roomConditionItemModel));
-      return RoomConditionWidget(roomConditionItemModel);
-    });
-  }
-
-  Widget _buildTodaysWeatherItem() {
-    return HookBuilder(builder: (context) {
-      final todaysWeatherItemModel = useProvider(stationPageControllerProvider
-          .select((value) => value.todaysWeatherItemModel));
-      var children = <Widget>[];
-      children.add(TodaysWeatherWidget(todaysWeatherItemModel));
-
-      // TODO ここ切り出ししたい
-      var temperatureColumn = Column(
-        children: [
-          TodaysTemperatureWidget(todaysWeatherItemModel),
-          _buildRoomConditionWidget()
-        ],
-      );
-
-      children.add(temperatureColumn);
-      return Container(
-        margin: const EdgeInsets.fromLTRB(16, 0, 0, 0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: children,
-        ),
-      );
-    });
-  }
-
-  Widget _buildWeeklyWeatherItem() {
-    return HookBuilder(builder: (context) {
-      final weeklyWeatherItemModel = useProvider(stationPageControllerProvider
-          .select((value) => value.weeklyWeatherItemModel));
-      final needShowSetting = useProvider(stationPageControllerProvider
-          .select((value) => value.needShowSetting));
-      // TODO 設定不足はここで良いのか検討する
-      if (needShowSetting) {
-        return _buildSettingButton(L10n.of(context)!);
-      }
-      return WeeklyWeatherItemWidget(weeklyWeatherItemModel);
-    });
-  }
-
-  Widget _buildSettingButton(L10n message) {
-    return TextButton(
         onPressed: () {
           Get.toNamed(Constants.pageSetting);
         },
-        child: Text(message.needSetting));
+      ),
+    );
+  }
+}
+
+class _Weather extends StatelessWidget {
+  const _Weather();
+
+  @override
+  Widget build(BuildContext context) {
+    var children = <Widget>[];
+    children.add(const _TodaysWeatherItem());
+    children.add(const _WeeklyWeather());
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: children,
+      ),
+    );
+  }
+}
+
+class _TodaysWeatherItem extends HookConsumerWidget {
+  const _TodaysWeatherItem();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final todaysWeatherItemModel = ref.watch(stationPageControllerProvider
+        .select((value) => value.todaysWeatherItemModel));
+    var children = <Widget>[];
+    children.add(TodaysWeatherWidget(todaysWeatherItemModel));
+
+    var temperatureColumn = Column(
+      children: [
+        TodaysTemperatureWidget(todaysWeatherItemModel),
+        const _RoomCondition(),
+      ],
+    );
+
+    children.add(temperatureColumn);
+    return Container(
+      margin: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: children,
+      ),
+    );
+  }
+}
+
+class _RoomCondition extends HookConsumerWidget {
+  const _RoomCondition();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final roomConditionItemModel = ref.watch(stationPageControllerProvider
+        .select((value) => value.roomConditionItemModel));
+    return RoomConditionWidget(roomConditionItemModel);
+  }
+}
+
+class _WeeklyWeather extends HookConsumerWidget {
+  const _WeeklyWeather();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final weeklyWeatherItemModel = ref.watch(stationPageControllerProvider
+        .select((value) => value.weeklyWeatherItemModel));
+    final needShowSetting = ref.watch(
+        stationPageControllerProvider.select((value) => value.needShowSetting));
+    // TODO 設定不足はここで良いのか検討する
+    if (needShowSetting) {
+      return const _NeedSettingButton();
+    }
+    return WeeklyWeatherItemWidget(weeklyWeatherItemModel);
+  }
+}
+
+class _NeedSettingButton extends StatelessWidget {
+  const _NeedSettingButton();
+
+  @override
+  Widget build(BuildContext context) {
+    final message = L10n.of(context)!;
+    return TextButton(
+      onPressed: () {
+        Get.toNamed(Constants.pageSetting);
+      },
+      child: Text(message.needSetting),
+    );
+  }
+}
+
+class _DateTime extends StatelessWidget {
+  const _DateTime();
+
+  @override
+  Widget build(BuildContext context) {
+    final children = <Widget>[];
+    children.add(const _NowDate());
+    children.add(const _NowTime());
+
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: children,
+      ),
+    );
+  }
+}
+
+class _NowDate extends HookConsumerWidget {
+  const _NowDate();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final message = L10n.of(context)!;
+    final nowDateItemModel = ref.watch(stationPageControllerProvider
+        .select((value) => value.nowDateItemModel));
+    return Container(
+      margin: const EdgeInsets.only(left: 16),
+      child: Text(
+        sprintf(
+          message.nowDateText,
+          [
+            nowDateItemModel.year,
+            nowDateItemModel.month,
+            nowDateItemModel.day,
+            nowDateItemModel.weekday.from(message)
+          ],
+        ),
+        style: const TextStyle(
+          color: ColorName.textWhite,
+          fontSize: 40,
+        ),
+      ),
+    );
+  }
+}
+
+class _NowTime extends HookConsumerWidget {
+  const _NowTime();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final message = L10n.of(context)!;
+    final timeItemModel = ref.watch(
+        stationPageControllerProvider.select((value) => value.timeItemModel));
+    return Container(
+      margin: const EdgeInsets.only(
+        right: 16,
+        bottom: 16,
+      ),
+      child: Text(
+        sprintf(
+          message.nowTimeText,
+          [timeItemModel.hour, timeItemModel.minute],
+        ),
+        style: const TextStyle(
+          color: ColorName.textWhite,
+          fontSize: 100,
+        ),
+      ),
+    );
   }
 }
