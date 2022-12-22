@@ -18,46 +18,52 @@ import '../../../gateway/data/repository/weather_repository.dart';
 import '../../../gateway/data/repository/weather_repository_impl.dart';
 import '../../usecase/station/top.dart';
 
-final stationTopUseCaseProvider = Provider<StationTopUseCase>((ref) =>
-    StationTopInteractor(
-        settingRepository: ref.read(appSettingRepositoryProvider),
-        weatherRepository: ref.read(weatherRepositoryProvider),
-        meterRepository: ref.read(meterRepositoryProvider)));
+final stationTopUseCaseProvider = Provider<StationTopUseCase>(
+  (ref) => StationTopInteractor(
+    settingRepository: ref.read(appSettingRepositoryProvider),
+    weatherRepository: ref.read(weatherRepositoryProvider),
+    meterRepository: ref.read(
+      meterRepositoryProvider,
+    ),
+  ),
+);
 
 class StationTopInteractor implements StationTopUseCase {
-  StationTopInteractor(
-      {required AppSettingRepository settingRepository,
-      required WeatherRepository weatherRepository,
-      required MeterRepository meterRepository})
-      : _settingRepository = settingRepository,
-        _weatherRepository = weatherRepository,
-        _meterRepository = meterRepository;
+  StationTopInteractor({
+    required this.settingRepository,
+    required this.weatherRepository,
+    required this.meterRepository,
+  });
 
-  final AppSettingRepository _settingRepository;
-  final WeatherRepository _weatherRepository;
-  final MeterRepository _meterRepository;
+  final AppSettingRepository settingRepository;
+  final WeatherRepository weatherRepository;
+  final MeterRepository meterRepository;
 
   @override
   Future<MeterDeviceId?> loadMeterDeviceId() =>
-      _settingRepository.loadMeterDeviceId();
+      settingRepository.loadMeterDeviceId();
 
   @override
   Future<OpenWeatherAppId?> loadOpenWeatherAppId() =>
-      _settingRepository.loadOpenWeatherAppId();
+      settingRepository.loadOpenWeatherAppId();
 
   @override
   Future<SwitchBotAccessToken?> loadSwitchBotAccessToken() =>
-      _settingRepository.loadSwitchBotAccessToken();
+      settingRepository.loadSwitchBotAccessToken();
 
   @override
-  Future<Geolocation?> loadGeolocation(String zipCode) async {
+  Future<Geolocation?> loadGeolocation({
+    required String zipCode,
+  }) async {
     var locations = await locationFromAddress(zipCode);
 
     var position = locations.first;
 
     var placemarks = await placemarkFromCoordinates(
-        position.latitude, position.longitude,
-        localeIdentifier: "jp");
+      position.latitude,
+      position.longitude,
+      localeIdentifier: "jp",
+    );
     var placemark = placemarks.first;
 
     var name = "${placemark.administrativeArea} "
@@ -77,30 +83,39 @@ class StationTopInteractor implements StationTopUseCase {
   }
 
   @override
-  Future<ZipCode?> loadZipCode() => _settingRepository.loadZipCode();
+  Future<ZipCode?> loadZipCode() => settingRepository.loadZipCode();
 
   @override
-  Future<Weather> loadCurrentWeather(
-          {required OpenWeatherAppId appId,
-          required Geolocation geolocation}) =>
-      _weatherRepository.getCurrentWeather(
-          appId: appId, geolocation: geolocation);
+  Future<Weather> loadCurrentWeather({
+    required OpenWeatherAppId appId,
+    required Geolocation geolocation,
+  }) =>
+      weatherRepository.getCurrentWeather(
+        appId: appId,
+        geolocation: geolocation,
+      );
 
   @override
-  Future<List<Weather>> loadWeeklyWeather(
-      {required OpenWeatherAppId appId,
-      required Geolocation geolocation}) async {
-    final weatherList = await _weatherRepository.getWeeklyWeather(
-        appId: appId, geolocation: geolocation);
+  Future<List<Weather>> loadWeeklyWeather({
+    required OpenWeatherAppId appId,
+    required Geolocation geolocation,
+  }) async {
+    final weatherList = await weatherRepository.getWeeklyWeather(
+      appId: appId,
+      geolocation: geolocation,
+    );
     // 当日の天気予報は不要なので削除
     weatherList.removeAt(0);
     return weatherList;
   }
 
   @override
-  Future<RoomCondition> loadRoomCondition(
-          {required MeterDeviceId deviceId,
-          required SwitchBotAccessToken accessToken}) =>
-      _meterRepository.getCurrentRoomCondition(
-          deviceId: deviceId, accessToken: accessToken);
+  Future<RoomCondition> loadRoomCondition({
+    required MeterDeviceId deviceId,
+    required SwitchBotAccessToken accessToken,
+  }) =>
+      meterRepository.getCurrentRoomCondition(
+        deviceId: deviceId,
+        accessToken: accessToken,
+      );
 }
