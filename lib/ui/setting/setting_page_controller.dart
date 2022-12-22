@@ -10,32 +10,37 @@ import 'setting_page_state.dart';
 
 final settingPageControllerProvider =
     StateNotifierProvider<SettingPageController, SettingPageState>(
-        (ref) => SettingPageController(ref.read(appSettingTopUsecaseProvider)));
+  (ref) => SettingPageController(
+    settingTopUseCase: ref.read(appSettingTopUsecaseProvider),
+  ),
+);
 
 class SettingPageController extends StateNotifier<SettingPageState> {
-  SettingPageController(this._settingTopUseCase)
-      : super(SettingPageState.init());
+  SettingPageController({
+    required this.settingTopUseCase,
+  }) : super(SettingPageState.init());
 
-  final AppSettingTopUseCase _settingTopUseCase;
+  final AppSettingTopUseCase settingTopUseCase;
 
   void onBuildStart() async {
-    final meterDeviceId = await _settingTopUseCase.loadMeterDeviceId();
-    final accessToken = await _settingTopUseCase.loadSwitchBotAccessToken();
-    final weatherAppId = await _settingTopUseCase.loadOpenWeatherAppId();
-    final zipCode = await _settingTopUseCase.loadZipCode();
+    final meterDeviceId = await settingTopUseCase.loadMeterDeviceId();
+    final accessToken = await settingTopUseCase.loadSwitchBotAccessToken();
+    final weatherAppId = await settingTopUseCase.loadOpenWeatherAppId();
+    final zipCode = await settingTopUseCase.loadZipCode();
 
     state = state.copyWith.call(
-        deviceId: meterDeviceId,
-        accessToken: accessToken,
-        appId: weatherAppId,
-        zipCode: zipCode);
+      deviceId: meterDeviceId,
+      accessToken: accessToken,
+      appId: weatherAppId,
+      zipCode: zipCode,
+    );
   }
 
   Future<void> saveMeterDeviceId(String deviceId) async {
     final meterDeviceId = MeterDeviceId(
       value: deviceId,
     );
-    await _settingTopUseCase.saveMeterDeviceId(
+    await settingTopUseCase.saveMeterDeviceId(
       deviceId: meterDeviceId,
     );
     state = state.copyWith.call(
@@ -47,7 +52,7 @@ class SettingPageController extends StateNotifier<SettingPageState> {
     final switchBotAccessToken = SwitchBotAccessToken(
       value: accessToken,
     );
-    await _settingTopUseCase.saveSwitchBotAccessToken(
+    await settingTopUseCase.saveSwitchBotAccessToken(
       accessToken: switchBotAccessToken,
     );
     state = state.copyWith.call(
@@ -59,7 +64,7 @@ class SettingPageController extends StateNotifier<SettingPageState> {
     final weatherAppId = OpenWeatherAppId(
       value: appId,
     );
-    await _settingTopUseCase.saveOpenWeatherAppId(
+    await settingTopUseCase.saveOpenWeatherAppId(
       appId: weatherAppId,
     );
     state = state.copyWith.call(
@@ -71,7 +76,7 @@ class SettingPageController extends StateNotifier<SettingPageState> {
     final zipCodeVO = ZipCode(
       value: zipCode,
     );
-    await _settingTopUseCase.saveZipCode(
+    await settingTopUseCase.saveZipCode(
       zipCode: zipCodeVO,
     );
     state = state.copyWith.call(

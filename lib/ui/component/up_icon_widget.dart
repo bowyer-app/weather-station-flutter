@@ -3,13 +3,20 @@ import 'package:flutter/cupertino.dart';
 import '../../gen/assets.gen.dart';
 
 class UpIconWidget extends StatelessWidget {
-  final double _size;
-  final Color _color;
+  final double size;
+  final Color color;
 
-  UpIconWidget(this._size, this._color);
+  UpIconWidget({
+    required this.size,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Assets.svgs.vectorUp.svg(width: _size, height: _size, color: _color);
+    return Assets.svgs.vectorUp.svg(
+      width: size,
+      height: size,
+      color: color,
+    );
   }
 }

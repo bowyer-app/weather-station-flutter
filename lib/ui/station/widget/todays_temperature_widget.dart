@@ -14,7 +14,10 @@ class TodaysTemperatureWidget extends StatelessWidget {
 
   Widget _buildMaxTemperature(L10n message) {
     var children = <Widget>[];
-    children.add(UpIconWidget(20, ColorName.textRed));
+    children.add(UpIconWidget(
+      size: 20,
+      color: ColorName.textRed,
+    ));
     var text = Container(
       margin: const EdgeInsets.only(left: 8),
       child: Text(
@@ -30,7 +33,10 @@ class TodaysTemperatureWidget extends StatelessWidget {
 
   Widget _buildMinTemperature(L10n message) {
     var children = <Widget>[];
-    children.add(DownIconWidget(20, ColorName.textBlue));
+    children.add(DownIconWidget(
+      size: 20,
+      color: ColorName.textBlue,
+    ));
     var text = Container(
       margin: const EdgeInsets.only(left: 8),
       child: Text(

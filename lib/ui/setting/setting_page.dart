@@ -22,7 +22,7 @@ class SettingPage extends HookConsumerWidget with InputTextDialog {
     final controller = ref.read(settingPageControllerProvider.notifier);
     controller.onBuildStart();
 
-    var message = L10n.of(context)!;
+    final message = L10n.of(context)!;
 
     return Scaffold(
       appBar: PreferredSize(
@@ -68,7 +68,7 @@ class _DeviceId extends HookConsumerWidget with InputTextDialog {
   Widget build(BuildContext context, WidgetRef ref) {
     final message = L10n.of(context)!;
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final deviceId = ref.read(settingPageControllerProvider
+    final deviceId = ref.watch(settingPageControllerProvider
         .select((value) => value.deviceId?.value ?? ""));
     return ListTile(
       title: Text(
@@ -100,7 +100,7 @@ class _AccessToken extends HookConsumerWidget with InputTextDialog {
   Widget build(BuildContext context, WidgetRef ref) {
     final message = L10n.of(context)!;
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final accessToken = ref.read(settingPageControllerProvider
+    final accessToken = ref.watch(settingPageControllerProvider
         .select((value) => value.accessToken?.value ?? ""));
     return ListTile(
       title: Text(
@@ -132,7 +132,7 @@ class _ZipCode extends HookConsumerWidget with InputTextDialog {
   Widget build(BuildContext context, WidgetRef ref) {
     final message = L10n.of(context)!;
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final zipCode = ref.read(settingPageControllerProvider
+    final zipCode = ref.watch(settingPageControllerProvider
         .select((value) => value.zipCode?.value ?? ""));
     return ListTile(
       title: Text(
@@ -164,7 +164,7 @@ class _OpenWeatherId extends HookConsumerWidget with InputTextDialog {
   Widget build(BuildContext context, WidgetRef ref) {
     final message = L10n.of(context)!;
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final appId = ref.read(settingPageControllerProvider
+    final appId = ref.watch(settingPageControllerProvider
         .select((value) => value.appId?.value ?? ""));
 
     return ListTile(

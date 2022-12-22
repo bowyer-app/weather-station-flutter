@@ -3,14 +3,20 @@ import 'package:flutter/cupertino.dart';
 import '../../gen/assets.gen.dart';
 
 class DownIconWidget extends StatelessWidget {
-  final double _size;
-  final Color _color;
+  final double size;
+  final Color color;
 
-  DownIconWidget(this._size, this._color);
+  DownIconWidget({
+    required this.size,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Assets.svgs.vectorDown
-        .svg(width: _size, height: _size, color: _color);
+    return Assets.svgs.vectorDown.svg(
+      width: size,
+      height: size,
+      color: color,
+    );
   }
 }
