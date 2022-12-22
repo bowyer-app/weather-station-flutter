@@ -27,7 +27,9 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
     if (deviceId == null) {
       return null;
     }
-    return MeterDeviceId(deviceId);
+    return MeterDeviceId(
+      value: deviceId,
+    );
   }
 
   @override
@@ -43,7 +45,9 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
     if (accessToken == null) {
       return null;
     }
-    return SwitchBotAccessToken(accessToken);
+    return SwitchBotAccessToken(
+      value: accessToken,
+    );
   }
 
   @override
@@ -60,7 +64,9 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
     if (appId == null) {
       return null;
     }
-    return OpenWeatherAppId(appId);
+    return OpenWeatherAppId(
+      value: appId,
+    );
   }
 
   @override
@@ -76,7 +82,9 @@ class AppSettingDataSourceImpl extends AppSettingDataSource {
     if (zipCode == null) {
       return null;
     }
-    return ZipCode(zipCode);
+    return ZipCode(
+      value: zipCode,
+    );
   }
 
   @override

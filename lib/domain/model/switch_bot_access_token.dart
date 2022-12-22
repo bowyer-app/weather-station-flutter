@@ -2,5 +2,7 @@
 class SwitchBotAccessToken {
   final String value;
 
-  SwitchBotAccessToken(this.value);
+  SwitchBotAccessToken({
+    required this.value,
+  });
 }

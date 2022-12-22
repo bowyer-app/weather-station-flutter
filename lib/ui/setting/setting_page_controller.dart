@@ -32,25 +32,33 @@ class SettingPageController extends StateNotifier<SettingPageState> {
   }
 
   Future<void> saveMeterDeviceId(String deviceId) async {
-    final meterDeviceId = MeterDeviceId(deviceId);
+    final meterDeviceId = MeterDeviceId(
+      value: deviceId,
+    );
     await _settingTopUseCase.saveMeterDeviceId(meterDeviceId);
     state = state.copyWith.call(deviceId: meterDeviceId);
   }
 
   Future<void> saveSwitchBotAccessToken(String accessToken) async {
-    final switchBotAccessToken = SwitchBotAccessToken((accessToken));
+    final switchBotAccessToken = SwitchBotAccessToken(
+      value: accessToken,
+    );
     await _settingTopUseCase.saveSwitchBotAccessToken(switchBotAccessToken);
     state = state.copyWith.call(accessToken: switchBotAccessToken);
   }
 
   Future<void> saveOpenWeatherAppId(String appId) async {
-    final weatherAppId = OpenWeatherAppId(appId);
+    final weatherAppId = OpenWeatherAppId(
+      value: appId,
+    );
     await _settingTopUseCase.saveOpenWeatherAppId(weatherAppId);
     state = state.copyWith.call(appId: weatherAppId);
   }
 
   Future<void> saveZipCode(String zipCode) async {
-    final zipCodeVO = ZipCode(zipCode);
+    final zipCodeVO = ZipCode(
+      value: zipCode,
+    );
     await _settingTopUseCase.saveZipCode(zipCodeVO);
     state = state.copyWith.call(zipCode: zipCodeVO);
   }

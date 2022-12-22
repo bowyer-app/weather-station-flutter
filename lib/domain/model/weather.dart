@@ -12,6 +12,12 @@ class Weather {
   final Temperature minTemperature;
   final WeatherDateTime dateTime;
 
-  Weather(this.description, this.weatherType, this.nowTemperature,
-      this.maxTemperature, this.minTemperature, this.dateTime);
+  Weather({
+    required this.description,
+    required this.weatherType,
+    required this.nowTemperature,
+    required this.maxTemperature,
+    required this.minTemperature,
+    required this.dateTime,
+  });
 }

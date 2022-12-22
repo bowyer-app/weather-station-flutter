@@ -8,36 +8,58 @@ import '../model/remote/daily_weather.dart';
 
 extension CurrentWeatherResponseExt on CurrentWeatherResponse {
   Weather toWeather() => Weather(
-      WeatherDescription(weather.first.description),
-      toWeatherType(),
-      toNowTemperature(),
-      toMaxTemperature(),
-      toMinTemperature(),
-      WeatherDateTime(dt));
+        description: WeatherDescription(
+          value: weather.first.description,
+        ),
+        weatherType: toWeatherType(),
+        nowTemperature: toNowTemperature(),
+        maxTemperature: toMaxTemperature(),
+        minTemperature: toMinTemperature(),
+        dateTime: WeatherDateTime(
+          value: dt,
+        ),
+      );
 
   WeatherType toWeatherType() => WeatherTypeExt.fromIcon(weather.first.icon);
 
-  Temperature toNowTemperature() => Temperature(main!.temp);
+  Temperature toNowTemperature() => Temperature(
+        value: main!.temp,
+      );
 
-  Temperature toMinTemperature() => Temperature(main!.tempMin);
+  Temperature toMinTemperature() => Temperature(
+        value: main!.tempMin,
+      );
 
-  Temperature toMaxTemperature() => Temperature(main!.tempMax);
+  Temperature toMaxTemperature() => Temperature(
+        value: main!.tempMax,
+      );
 }
 
 extension DailyWeatherExt on DailyWeather {
   Weather toWeather() => Weather(
-      WeatherDescription(weather.first.description),
-      toWeatherType(),
-      Temperature(0.0),
-      toMaxTemperature(),
-      toMinTemperature(),
-      WeatherDateTime(dt));
+        description: WeatherDescription(
+          value: weather.first.description,
+        ),
+        weatherType: toWeatherType(),
+        nowTemperature: Temperature(
+          value: 0.0,
+        ),
+        maxTemperature: toMaxTemperature(),
+        minTemperature: toMinTemperature(),
+        dateTime: WeatherDateTime(
+          value: dt,
+        ),
+      );
 
   WeatherType toWeatherType() => WeatherTypeExt.fromIcon(weather.first.icon);
 
-  Temperature toMinTemperature() => Temperature(temp!.min);
+  Temperature toMinTemperature() => Temperature(
+        value: temp!.min,
+      );
 
-  Temperature toMaxTemperature() => Temperature(temp!.max);
+  Temperature toMaxTemperature() => Temperature(
+        value: temp!.max,
+      );
 }
 
 class WeatherTypeExt {

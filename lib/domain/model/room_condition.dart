@@ -6,5 +6,8 @@ class RoomCondition {
   final Temperature temperature;
   final Humidity humidity;
 
-  RoomCondition(this.temperature, this.humidity);
+  RoomCondition({
+    required this.temperature,
+    required this.humidity,
+  });
 }

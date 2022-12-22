@@ -2,5 +2,7 @@
 class Latitude {
   final double value;
 
-  Latitude(this.value);
+  Latitude({
+    required this.value,
+  });
 }

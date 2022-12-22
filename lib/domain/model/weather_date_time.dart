@@ -1,5 +1,7 @@
 class WeatherDateTime {
   final int value;
 
-  WeatherDateTime(this.value);
+  WeatherDateTime({
+    required this.value,
+  });
 }
