@@ -12,7 +12,7 @@ part of 'daily_weather_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DailyWeatherItemModel {
@@ -90,11 +90,12 @@ class _$DailyWeatherItemModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DailyWeatherItemModelCopyWith<$Res>
+abstract class _$$DailyWeatherItemModelImplCopyWith<$Res>
     implements $DailyWeatherItemModelCopyWith<$Res> {
-  factory _$$_DailyWeatherItemModelCopyWith(_$_DailyWeatherItemModel value,
-          $Res Function(_$_DailyWeatherItemModel) then) =
-      __$$_DailyWeatherItemModelCopyWithImpl<$Res>;
+  factory _$$DailyWeatherItemModelImplCopyWith(
+          _$DailyWeatherItemModelImpl value,
+          $Res Function(_$DailyWeatherItemModelImpl) then) =
+      __$$DailyWeatherItemModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -108,11 +109,12 @@ abstract class _$$_DailyWeatherItemModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DailyWeatherItemModelCopyWithImpl<$Res>
-    extends _$DailyWeatherItemModelCopyWithImpl<$Res, _$_DailyWeatherItemModel>
-    implements _$$_DailyWeatherItemModelCopyWith<$Res> {
-  __$$_DailyWeatherItemModelCopyWithImpl(_$_DailyWeatherItemModel _value,
-      $Res Function(_$_DailyWeatherItemModel) _then)
+class __$$DailyWeatherItemModelImplCopyWithImpl<$Res>
+    extends _$DailyWeatherItemModelCopyWithImpl<$Res,
+        _$DailyWeatherItemModelImpl>
+    implements _$$DailyWeatherItemModelImplCopyWith<$Res> {
+  __$$DailyWeatherItemModelImplCopyWithImpl(_$DailyWeatherItemModelImpl _value,
+      $Res Function(_$DailyWeatherItemModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -123,7 +125,7 @@ class __$$_DailyWeatherItemModelCopyWithImpl<$Res>
     Object? maxTemperature = null,
     Object? minTemperature = null,
   }) {
-    return _then(_$_DailyWeatherItemModel(
+    return _then(_$DailyWeatherItemModelImpl(
       dateItemModel: null == dateItemModel
           ? _value.dateItemModel
           : dateItemModel // ignore: cast_nullable_to_non_nullable
@@ -146,8 +148,8 @@ class __$$_DailyWeatherItemModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DailyWeatherItemModel implements _DailyWeatherItemModel {
-  _$_DailyWeatherItemModel(
+class _$DailyWeatherItemModelImpl implements _DailyWeatherItemModel {
+  _$DailyWeatherItemModelImpl(
       {required this.dateItemModel,
       required this.weatherType,
       required this.maxTemperature,
@@ -168,10 +170,10 @@ class _$_DailyWeatherItemModel implements _DailyWeatherItemModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DailyWeatherItemModel &&
+            other is _$DailyWeatherItemModelImpl &&
             (identical(other.dateItemModel, dateItemModel) ||
                 other.dateItemModel == dateItemModel) &&
             (identical(other.weatherType, weatherType) ||
@@ -189,9 +191,9 @@ class _$_DailyWeatherItemModel implements _DailyWeatherItemModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DailyWeatherItemModelCopyWith<_$_DailyWeatherItemModel> get copyWith =>
-      __$$_DailyWeatherItemModelCopyWithImpl<_$_DailyWeatherItemModel>(
-          this, _$identity);
+  _$$DailyWeatherItemModelImplCopyWith<_$DailyWeatherItemModelImpl>
+      get copyWith => __$$DailyWeatherItemModelImplCopyWithImpl<
+          _$DailyWeatherItemModelImpl>(this, _$identity);
 }
 
 abstract class _DailyWeatherItemModel implements DailyWeatherItemModel {
@@ -199,7 +201,7 @@ abstract class _DailyWeatherItemModel implements DailyWeatherItemModel {
       {required final DateItemModel dateItemModel,
       required final WeatherType weatherType,
       required final double maxTemperature,
-      required final double minTemperature}) = _$_DailyWeatherItemModel;
+      required final double minTemperature}) = _$DailyWeatherItemModelImpl;
 
   @override
   DateItemModel get dateItemModel;
@@ -211,6 +213,6 @@ abstract class _DailyWeatherItemModel implements DailyWeatherItemModel {
   double get minTemperature;
   @override
   @JsonKey(ignore: true)
-  _$$_DailyWeatherItemModelCopyWith<_$_DailyWeatherItemModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DailyWeatherItemModelImplCopyWith<_$DailyWeatherItemModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

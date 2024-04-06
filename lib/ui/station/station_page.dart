@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sprintf/sprintf.dart';
-import 'package:wakelock/wakelock.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../../constants.dart';
 import '../../gen/colors.gen.dart';
@@ -18,7 +18,7 @@ import 'widget/weekly_weather_item_widget.dart';
 class StationPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Wakelock.enable();
+    WakelockPlus.enable();
     final controller = ref.read(stationPageControllerProvider.notifier);
     controller.onBuildStart();
 

@@ -12,7 +12,7 @@ part of 'station_page_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$StationPageState {
@@ -196,11 +196,11 @@ class _$StationPageStateCopyWithImpl<$Res, $Val extends StationPageState>
 }
 
 /// @nodoc
-abstract class _$$_StationPageStateCopyWith<$Res>
+abstract class _$$StationPageStateImplCopyWith<$Res>
     implements $StationPageStateCopyWith<$Res> {
-  factory _$$_StationPageStateCopyWith(
-          _$_StationPageState value, $Res Function(_$_StationPageState) then) =
-      __$$_StationPageStateCopyWithImpl<$Res>;
+  factory _$$StationPageStateImplCopyWith(_$StationPageStateImpl value,
+          $Res Function(_$StationPageStateImpl) then) =
+      __$$StationPageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -232,11 +232,11 @@ abstract class _$$_StationPageStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_StationPageStateCopyWithImpl<$Res>
-    extends _$StationPageStateCopyWithImpl<$Res, _$_StationPageState>
-    implements _$$_StationPageStateCopyWith<$Res> {
-  __$$_StationPageStateCopyWithImpl(
-      _$_StationPageState _value, $Res Function(_$_StationPageState) _then)
+class __$$StationPageStateImplCopyWithImpl<$Res>
+    extends _$StationPageStateCopyWithImpl<$Res, _$StationPageStateImpl>
+    implements _$$StationPageStateImplCopyWith<$Res> {
+  __$$StationPageStateImplCopyWithImpl(_$StationPageStateImpl _value,
+      $Res Function(_$StationPageStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -255,7 +255,7 @@ class __$$_StationPageStateCopyWithImpl<$Res>
     Object? isFirstRequest = null,
     Object? needShowSetting = null,
   }) {
-    return _then(_$_StationPageState(
+    return _then(_$StationPageStateImpl(
       nowDateItemModel: null == nowDateItemModel
           ? _value.nowDateItemModel
           : nowDateItemModel // ignore: cast_nullable_to_non_nullable
@@ -310,8 +310,8 @@ class __$$_StationPageStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_StationPageState implements _StationPageState {
-  const _$_StationPageState(
+class _$StationPageStateImpl implements _StationPageState {
+  const _$StationPageStateImpl(
       {required this.nowDateItemModel,
       required this.timeItemModel,
       required this.todaysWeatherItemModel,
@@ -356,10 +356,10 @@ class _$_StationPageState implements _StationPageState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StationPageState &&
+            other is _$StationPageStateImpl &&
             (identical(other.nowDateItemModel, nowDateItemModel) ||
                 other.nowDateItemModel == nowDateItemModel) &&
             (identical(other.timeItemModel, timeItemModel) ||
@@ -404,8 +404,9 @@ class _$_StationPageState implements _StationPageState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StationPageStateCopyWith<_$_StationPageState> get copyWith =>
-      __$$_StationPageStateCopyWithImpl<_$_StationPageState>(this, _$identity);
+  _$$StationPageStateImplCopyWith<_$StationPageStateImpl> get copyWith =>
+      __$$StationPageStateImplCopyWithImpl<_$StationPageStateImpl>(
+          this, _$identity);
 }
 
 abstract class _StationPageState implements StationPageState {
@@ -421,7 +422,7 @@ abstract class _StationPageState implements StationPageState {
       final OpenWeatherAppId? appId,
       final Geolocation? geolocation,
       required final bool isFirstRequest,
-      required final bool needShowSetting}) = _$_StationPageState;
+      required final bool needShowSetting}) = _$StationPageStateImpl;
 
   @override
   DateItemModel get nowDateItemModel;
@@ -449,6 +450,6 @@ abstract class _StationPageState implements StationPageState {
   bool get needShowSetting;
   @override
   @JsonKey(ignore: true)
-  _$$_StationPageStateCopyWith<_$_StationPageState> get copyWith =>
+  _$$StationPageStateImplCopyWith<_$StationPageStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

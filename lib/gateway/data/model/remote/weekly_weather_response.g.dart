@@ -6,17 +6,17 @@ part of 'weekly_weather_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_WeeklyWeatherResponse _$$_WeeklyWeatherResponseFromJson(
+_$WeeklyWeatherResponseImpl _$$WeeklyWeatherResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_WeeklyWeatherResponse(
+    _$WeeklyWeatherResponseImpl(
       daily: (json['daily'] as List<dynamic>?)
               ?.map((e) => DailyWeather.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );
 
-Map<String, dynamic> _$$_WeeklyWeatherResponseToJson(
-        _$_WeeklyWeatherResponse instance) =>
+Map<String, dynamic> _$$WeeklyWeatherResponseImplToJson(
+        _$WeeklyWeatherResponseImpl instance) =>
     <String, dynamic>{
       'daily': instance.daily,
     };

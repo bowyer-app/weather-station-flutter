@@ -6,12 +6,13 @@ part of 'meter_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MeterBody _$$_MeterBodyFromJson(Map<String, dynamic> json) => _$_MeterBody(
+_$MeterBodyImpl _$$MeterBodyImplFromJson(Map<String, dynamic> json) =>
+    _$MeterBodyImpl(
       temperature: (json['temperature'] as num?)?.toDouble() ?? 0.0,
       humidity: json['humidity'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_MeterBodyToJson(_$_MeterBody instance) =>
+Map<String, dynamic> _$$MeterBodyImplToJson(_$MeterBodyImpl instance) =>
     <String, dynamic>{
       'temperature': instance.temperature,
       'humidity': instance.humidity,

@@ -12,7 +12,7 @@ part of 'room_condition_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$RoomConditionItemModel {
@@ -64,23 +64,25 @@ class _$RoomConditionItemModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RoomConditionItemModelCopyWith<$Res>
+abstract class _$$RoomConditionItemModelImplCopyWith<$Res>
     implements $RoomConditionItemModelCopyWith<$Res> {
-  factory _$$_RoomConditionItemModelCopyWith(_$_RoomConditionItemModel value,
-          $Res Function(_$_RoomConditionItemModel) then) =
-      __$$_RoomConditionItemModelCopyWithImpl<$Res>;
+  factory _$$RoomConditionItemModelImplCopyWith(
+          _$RoomConditionItemModelImpl value,
+          $Res Function(_$RoomConditionItemModelImpl) then) =
+      __$$RoomConditionItemModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double nowTemperature, int humidity});
 }
 
 /// @nodoc
-class __$$_RoomConditionItemModelCopyWithImpl<$Res>
+class __$$RoomConditionItemModelImplCopyWithImpl<$Res>
     extends _$RoomConditionItemModelCopyWithImpl<$Res,
-        _$_RoomConditionItemModel>
-    implements _$$_RoomConditionItemModelCopyWith<$Res> {
-  __$$_RoomConditionItemModelCopyWithImpl(_$_RoomConditionItemModel _value,
-      $Res Function(_$_RoomConditionItemModel) _then)
+        _$RoomConditionItemModelImpl>
+    implements _$$RoomConditionItemModelImplCopyWith<$Res> {
+  __$$RoomConditionItemModelImplCopyWithImpl(
+      _$RoomConditionItemModelImpl _value,
+      $Res Function(_$RoomConditionItemModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -89,7 +91,7 @@ class __$$_RoomConditionItemModelCopyWithImpl<$Res>
     Object? nowTemperature = null,
     Object? humidity = null,
   }) {
-    return _then(_$_RoomConditionItemModel(
+    return _then(_$RoomConditionItemModelImpl(
       nowTemperature: null == nowTemperature
           ? _value.nowTemperature
           : nowTemperature // ignore: cast_nullable_to_non_nullable
@@ -104,8 +106,8 @@ class __$$_RoomConditionItemModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RoomConditionItemModel implements _RoomConditionItemModel {
-  _$_RoomConditionItemModel(
+class _$RoomConditionItemModelImpl implements _RoomConditionItemModel {
+  _$RoomConditionItemModelImpl(
       {required this.nowTemperature, required this.humidity});
 
   @override
@@ -119,10 +121,10 @@ class _$_RoomConditionItemModel implements _RoomConditionItemModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RoomConditionItemModel &&
+            other is _$RoomConditionItemModelImpl &&
             (identical(other.nowTemperature, nowTemperature) ||
                 other.nowTemperature == nowTemperature) &&
             (identical(other.humidity, humidity) ||
@@ -135,15 +137,15 @@ class _$_RoomConditionItemModel implements _RoomConditionItemModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RoomConditionItemModelCopyWith<_$_RoomConditionItemModel> get copyWith =>
-      __$$_RoomConditionItemModelCopyWithImpl<_$_RoomConditionItemModel>(
-          this, _$identity);
+  _$$RoomConditionItemModelImplCopyWith<_$RoomConditionItemModelImpl>
+      get copyWith => __$$RoomConditionItemModelImplCopyWithImpl<
+          _$RoomConditionItemModelImpl>(this, _$identity);
 }
 
 abstract class _RoomConditionItemModel implements RoomConditionItemModel {
   factory _RoomConditionItemModel(
       {required final double nowTemperature,
-      required final int humidity}) = _$_RoomConditionItemModel;
+      required final int humidity}) = _$RoomConditionItemModelImpl;
 
   @override
   double get nowTemperature;
@@ -151,6 +153,6 @@ abstract class _RoomConditionItemModel implements RoomConditionItemModel {
   int get humidity;
   @override
   @JsonKey(ignore: true)
-  _$$_RoomConditionItemModelCopyWith<_$_RoomConditionItemModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RoomConditionItemModelImplCopyWith<_$RoomConditionItemModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

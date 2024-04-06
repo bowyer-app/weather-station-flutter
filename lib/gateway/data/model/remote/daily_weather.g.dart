@@ -6,8 +6,8 @@ part of 'daily_weather.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DailyWeather _$$_DailyWeatherFromJson(Map<String, dynamic> json) =>
-    _$_DailyWeather(
+_$DailyWeatherImpl _$$DailyWeatherImplFromJson(Map<String, dynamic> json) =>
+    _$DailyWeatherImpl(
       dt: json['dt'] as int? ?? 0,
       temp: json['temp'] == null
           ? null
@@ -18,7 +18,7 @@ _$_DailyWeather _$$_DailyWeatherFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$_DailyWeatherToJson(_$_DailyWeather instance) =>
+Map<String, dynamic> _$$DailyWeatherImplToJson(_$DailyWeatherImpl instance) =>
     <String, dynamic>{
       'dt': instance.dt,
       'temp': instance.temp,

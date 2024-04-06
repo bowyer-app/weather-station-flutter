@@ -12,7 +12,7 @@ part of 'weather_main.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 WeatherMain _$WeatherMainFromJson(Map<String, dynamic> json) {
   return _WeatherMain.fromJson(json);
@@ -79,11 +79,11 @@ class _$WeatherMainCopyWithImpl<$Res, $Val extends WeatherMain>
 }
 
 /// @nodoc
-abstract class _$$_WeatherMainCopyWith<$Res>
+abstract class _$$WeatherMainImplCopyWith<$Res>
     implements $WeatherMainCopyWith<$Res> {
-  factory _$$_WeatherMainCopyWith(
-          _$_WeatherMain value, $Res Function(_$_WeatherMain) then) =
-      __$$_WeatherMainCopyWithImpl<$Res>;
+  factory _$$WeatherMainImplCopyWith(
+          _$WeatherMainImpl value, $Res Function(_$WeatherMainImpl) then) =
+      __$$WeatherMainImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -93,11 +93,11 @@ abstract class _$$_WeatherMainCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_WeatherMainCopyWithImpl<$Res>
-    extends _$WeatherMainCopyWithImpl<$Res, _$_WeatherMain>
-    implements _$$_WeatherMainCopyWith<$Res> {
-  __$$_WeatherMainCopyWithImpl(
-      _$_WeatherMain _value, $Res Function(_$_WeatherMain) _then)
+class __$$WeatherMainImplCopyWithImpl<$Res>
+    extends _$WeatherMainCopyWithImpl<$Res, _$WeatherMainImpl>
+    implements _$$WeatherMainImplCopyWith<$Res> {
+  __$$WeatherMainImplCopyWithImpl(
+      _$WeatherMainImpl _value, $Res Function(_$WeatherMainImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -107,7 +107,7 @@ class __$$_WeatherMainCopyWithImpl<$Res>
     Object? tempMin = null,
     Object? tempMax = null,
   }) {
-    return _then(_$_WeatherMain(
+    return _then(_$WeatherMainImpl(
       temp: null == temp
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
@@ -126,14 +126,14 @@ class __$$_WeatherMainCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WeatherMain implements _WeatherMain {
-  _$_WeatherMain(
+class _$WeatherMainImpl implements _WeatherMain {
+  _$WeatherMainImpl(
       {this.temp = 0.0,
       @JsonKey(name: 'temp_min') this.tempMin = 0.0,
       @JsonKey(name: 'temp_max') this.tempMax = 0.0});
 
-  factory _$_WeatherMain.fromJson(Map<String, dynamic> json) =>
-      _$$_WeatherMainFromJson(json);
+  factory _$WeatherMainImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WeatherMainImplFromJson(json);
 
   @override
   @JsonKey()
@@ -151,10 +151,10 @@ class _$_WeatherMain implements _WeatherMain {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WeatherMain &&
+            other is _$WeatherMainImpl &&
             (identical(other.temp, temp) || other.temp == temp) &&
             (identical(other.tempMin, tempMin) || other.tempMin == tempMin) &&
             (identical(other.tempMax, tempMax) || other.tempMax == tempMax));
@@ -167,12 +167,12 @@ class _$_WeatherMain implements _WeatherMain {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WeatherMainCopyWith<_$_WeatherMain> get copyWith =>
-      __$$_WeatherMainCopyWithImpl<_$_WeatherMain>(this, _$identity);
+  _$$WeatherMainImplCopyWith<_$WeatherMainImpl> get copyWith =>
+      __$$WeatherMainImplCopyWithImpl<_$WeatherMainImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WeatherMainToJson(
+    return _$$WeatherMainImplToJson(
       this,
     );
   }
@@ -182,10 +182,10 @@ abstract class _WeatherMain implements WeatherMain {
   factory _WeatherMain(
       {final double temp,
       @JsonKey(name: 'temp_min') final double tempMin,
-      @JsonKey(name: 'temp_max') final double tempMax}) = _$_WeatherMain;
+      @JsonKey(name: 'temp_max') final double tempMax}) = _$WeatherMainImpl;
 
   factory _WeatherMain.fromJson(Map<String, dynamic> json) =
-      _$_WeatherMain.fromJson;
+      _$WeatherMainImpl.fromJson;
 
   @override
   double get temp;
@@ -197,6 +197,6 @@ abstract class _WeatherMain implements WeatherMain {
   double get tempMax;
   @override
   @JsonKey(ignore: true)
-  _$$_WeatherMainCopyWith<_$_WeatherMain> get copyWith =>
+  _$$WeatherMainImplCopyWith<_$WeatherMainImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

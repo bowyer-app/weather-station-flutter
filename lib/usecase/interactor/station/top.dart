@@ -62,7 +62,6 @@ class StationTopInteractor implements StationTopUseCase {
     var placemarks = await placemarkFromCoordinates(
       position.latitude,
       position.longitude,
-      localeIdentifier: "jp",
     );
     var placemark = placemarks.first;
 

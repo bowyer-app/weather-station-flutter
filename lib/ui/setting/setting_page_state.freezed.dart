@@ -12,7 +12,7 @@ part of 'setting_page_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SettingPageState {
@@ -79,11 +79,11 @@ class _$SettingPageStateCopyWithImpl<$Res, $Val extends SettingPageState>
 }
 
 /// @nodoc
-abstract class _$$_SettingPageStateCopyWith<$Res>
+abstract class _$$SettingPageStateImplCopyWith<$Res>
     implements $SettingPageStateCopyWith<$Res> {
-  factory _$$_SettingPageStateCopyWith(
-          _$_SettingPageState value, $Res Function(_$_SettingPageState) then) =
-      __$$_SettingPageStateCopyWithImpl<$Res>;
+  factory _$$SettingPageStateImplCopyWith(_$SettingPageStateImpl value,
+          $Res Function(_$SettingPageStateImpl) then) =
+      __$$SettingPageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,11 +94,11 @@ abstract class _$$_SettingPageStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SettingPageStateCopyWithImpl<$Res>
-    extends _$SettingPageStateCopyWithImpl<$Res, _$_SettingPageState>
-    implements _$$_SettingPageStateCopyWith<$Res> {
-  __$$_SettingPageStateCopyWithImpl(
-      _$_SettingPageState _value, $Res Function(_$_SettingPageState) _then)
+class __$$SettingPageStateImplCopyWithImpl<$Res>
+    extends _$SettingPageStateCopyWithImpl<$Res, _$SettingPageStateImpl>
+    implements _$$SettingPageStateImplCopyWith<$Res> {
+  __$$SettingPageStateImplCopyWithImpl(_$SettingPageStateImpl _value,
+      $Res Function(_$SettingPageStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -109,7 +109,7 @@ class __$$_SettingPageStateCopyWithImpl<$Res>
     Object? appId = freezed,
     Object? zipCode = freezed,
   }) {
-    return _then(_$_SettingPageState(
+    return _then(_$SettingPageStateImpl(
       deviceId: freezed == deviceId
           ? _value.deviceId
           : deviceId // ignore: cast_nullable_to_non_nullable
@@ -132,8 +132,8 @@ class __$$_SettingPageStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingPageState implements _SettingPageState {
-  const _$_SettingPageState(
+class _$SettingPageStateImpl implements _SettingPageState {
+  const _$SettingPageStateImpl(
       {this.deviceId, this.accessToken, this.appId, this.zipCode});
 
   @override
@@ -151,10 +151,10 @@ class _$_SettingPageState implements _SettingPageState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingPageState &&
+            other is _$SettingPageStateImpl &&
             (identical(other.deviceId, deviceId) ||
                 other.deviceId == deviceId) &&
             (identical(other.accessToken, accessToken) ||
@@ -170,8 +170,9 @@ class _$_SettingPageState implements _SettingPageState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SettingPageStateCopyWith<_$_SettingPageState> get copyWith =>
-      __$$_SettingPageStateCopyWithImpl<_$_SettingPageState>(this, _$identity);
+  _$$SettingPageStateImplCopyWith<_$SettingPageStateImpl> get copyWith =>
+      __$$SettingPageStateImplCopyWithImpl<_$SettingPageStateImpl>(
+          this, _$identity);
 }
 
 abstract class _SettingPageState implements SettingPageState {
@@ -179,7 +180,7 @@ abstract class _SettingPageState implements SettingPageState {
       {final MeterDeviceId? deviceId,
       final SwitchBotAccessToken? accessToken,
       final OpenWeatherAppId? appId,
-      final ZipCode? zipCode}) = _$_SettingPageState;
+      final ZipCode? zipCode}) = _$SettingPageStateImpl;
 
   @override
   MeterDeviceId? get deviceId;
@@ -191,6 +192,6 @@ abstract class _SettingPageState implements SettingPageState {
   ZipCode? get zipCode;
   @override
   @JsonKey(ignore: true)
-  _$$_SettingPageStateCopyWith<_$_SettingPageState> get copyWith =>
+  _$$SettingPageStateImplCopyWith<_$SettingPageStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

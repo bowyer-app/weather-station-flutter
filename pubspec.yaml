@@ -6,7 +6,7 @@ publish_to: 'none'
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
-  flutter: '>=3.3.10'
+  flutter: '>=3.19.3'
 
 dependencies:
   flutter:
@@ -27,28 +27,29 @@ dependencies:
   freezed_annotation: ^2.2.0
 
   # For DateTime
-  intl: ^0.17.0
+  intl: ^0.18.1
 
   # For Key-Value local storage
-  shared_preferences: ^2.0.0
+  shared_preferences: ^2.0.12
+  path_provider: ^2.0.12
 
   # Convert between Enum and String
   enum_to_string:
 
   # For UIs
-  gap: ^2.0.0
-  cupertino_icons: ^1.0.0
-  google_fonts: ^2.0.0
-  flutter_svg: ^0.22.0
+  gap: ^3.0.1
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.1.0
+  flutter_svg: 2.0.0
   sprintf: ^7.0.0
-  wakelock: ^0.6.2
+  wakelock_plus: ^1.2.2
 
   # For geolocation
-  geolocator: ^9.0.2
-  geocoding: ^2.0.0
+  geolocator: ^11.0.0
+  geocoding: ^3.0.0
 
   # For Utilities
-  get: ^4.1.3
+  get: ^4.6.6
 
 module:
   androidX: true
@@ -61,7 +62,7 @@ dev_dependencies:
     sdk: flutter
 
   build_runner: ^2.3.3
-  flutter_gen_runner: ^5.1.0+1
+  flutter_gen_runner: ^5.2.0
 
   # For Model
   freezed: ^2.3.2
@@ -70,6 +71,8 @@ dev_dependencies:
   effective_dart: ^1.3.0
 
 flutter_gen:
+  enabled: true
+  output: lib/gen/
   integrations:
     flutter_svg: true
 

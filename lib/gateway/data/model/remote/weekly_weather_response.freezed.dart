@@ -12,7 +12,7 @@ part of 'weekly_weather_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 WeeklyWeatherResponse _$WeeklyWeatherResponseFromJson(
     Map<String, dynamic> json) {
@@ -64,22 +64,24 @@ class _$WeeklyWeatherResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_WeeklyWeatherResponseCopyWith<$Res>
+abstract class _$$WeeklyWeatherResponseImplCopyWith<$Res>
     implements $WeeklyWeatherResponseCopyWith<$Res> {
-  factory _$$_WeeklyWeatherResponseCopyWith(_$_WeeklyWeatherResponse value,
-          $Res Function(_$_WeeklyWeatherResponse) then) =
-      __$$_WeeklyWeatherResponseCopyWithImpl<$Res>;
+  factory _$$WeeklyWeatherResponseImplCopyWith(
+          _$WeeklyWeatherResponseImpl value,
+          $Res Function(_$WeeklyWeatherResponseImpl) then) =
+      __$$WeeklyWeatherResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<DailyWeather> daily});
 }
 
 /// @nodoc
-class __$$_WeeklyWeatherResponseCopyWithImpl<$Res>
-    extends _$WeeklyWeatherResponseCopyWithImpl<$Res, _$_WeeklyWeatherResponse>
-    implements _$$_WeeklyWeatherResponseCopyWith<$Res> {
-  __$$_WeeklyWeatherResponseCopyWithImpl(_$_WeeklyWeatherResponse _value,
-      $Res Function(_$_WeeklyWeatherResponse) _then)
+class __$$WeeklyWeatherResponseImplCopyWithImpl<$Res>
+    extends _$WeeklyWeatherResponseCopyWithImpl<$Res,
+        _$WeeklyWeatherResponseImpl>
+    implements _$$WeeklyWeatherResponseImplCopyWith<$Res> {
+  __$$WeeklyWeatherResponseImplCopyWithImpl(_$WeeklyWeatherResponseImpl _value,
+      $Res Function(_$WeeklyWeatherResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +89,7 @@ class __$$_WeeklyWeatherResponseCopyWithImpl<$Res>
   $Res call({
     Object? daily = null,
   }) {
-    return _then(_$_WeeklyWeatherResponse(
+    return _then(_$WeeklyWeatherResponseImpl(
       daily: null == daily
           ? _value._daily
           : daily // ignore: cast_nullable_to_non_nullable
@@ -98,12 +100,12 @@ class __$$_WeeklyWeatherResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WeeklyWeatherResponse implements _WeeklyWeatherResponse {
-  _$_WeeklyWeatherResponse({final List<DailyWeather> daily = const []})
+class _$WeeklyWeatherResponseImpl implements _WeeklyWeatherResponse {
+  _$WeeklyWeatherResponseImpl({final List<DailyWeather> daily = const []})
       : _daily = daily;
 
-  factory _$_WeeklyWeatherResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_WeeklyWeatherResponseFromJson(json);
+  factory _$WeeklyWeatherResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WeeklyWeatherResponseImplFromJson(json);
 
   final List<DailyWeather> _daily;
   @override
@@ -120,10 +122,10 @@ class _$_WeeklyWeatherResponse implements _WeeklyWeatherResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WeeklyWeatherResponse &&
+            other is _$WeeklyWeatherResponseImpl &&
             const DeepCollectionEquality().equals(other._daily, _daily));
   }
 
@@ -135,13 +137,13 @@ class _$_WeeklyWeatherResponse implements _WeeklyWeatherResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WeeklyWeatherResponseCopyWith<_$_WeeklyWeatherResponse> get copyWith =>
-      __$$_WeeklyWeatherResponseCopyWithImpl<_$_WeeklyWeatherResponse>(
-          this, _$identity);
+  _$$WeeklyWeatherResponseImplCopyWith<_$WeeklyWeatherResponseImpl>
+      get copyWith => __$$WeeklyWeatherResponseImplCopyWithImpl<
+          _$WeeklyWeatherResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WeeklyWeatherResponseToJson(
+    return _$$WeeklyWeatherResponseImplToJson(
       this,
     );
   }
@@ -149,15 +151,15 @@ class _$_WeeklyWeatherResponse implements _WeeklyWeatherResponse {
 
 abstract class _WeeklyWeatherResponse implements WeeklyWeatherResponse {
   factory _WeeklyWeatherResponse({final List<DailyWeather> daily}) =
-      _$_WeeklyWeatherResponse;
+      _$WeeklyWeatherResponseImpl;
 
   factory _WeeklyWeatherResponse.fromJson(Map<String, dynamic> json) =
-      _$_WeeklyWeatherResponse.fromJson;
+      _$WeeklyWeatherResponseImpl.fromJson;
 
   @override
   List<DailyWeather> get daily;
   @override
   @JsonKey(ignore: true)
-  _$$_WeeklyWeatherResponseCopyWith<_$_WeeklyWeatherResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$WeeklyWeatherResponseImplCopyWith<_$WeeklyWeatherResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'daily_temperature.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 DailyTemperature _$DailyTemperatureFromJson(Map<String, dynamic> json) {
   return _DailyTemperature.fromJson(json);
@@ -68,22 +68,22 @@ class _$DailyTemperatureCopyWithImpl<$Res, $Val extends DailyTemperature>
 }
 
 /// @nodoc
-abstract class _$$_DailyTemperatureCopyWith<$Res>
+abstract class _$$DailyTemperatureImplCopyWith<$Res>
     implements $DailyTemperatureCopyWith<$Res> {
-  factory _$$_DailyTemperatureCopyWith(
-          _$_DailyTemperature value, $Res Function(_$_DailyTemperature) then) =
-      __$$_DailyTemperatureCopyWithImpl<$Res>;
+  factory _$$DailyTemperatureImplCopyWith(_$DailyTemperatureImpl value,
+          $Res Function(_$DailyTemperatureImpl) then) =
+      __$$DailyTemperatureImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double min, double max});
 }
 
 /// @nodoc
-class __$$_DailyTemperatureCopyWithImpl<$Res>
-    extends _$DailyTemperatureCopyWithImpl<$Res, _$_DailyTemperature>
-    implements _$$_DailyTemperatureCopyWith<$Res> {
-  __$$_DailyTemperatureCopyWithImpl(
-      _$_DailyTemperature _value, $Res Function(_$_DailyTemperature) _then)
+class __$$DailyTemperatureImplCopyWithImpl<$Res>
+    extends _$DailyTemperatureCopyWithImpl<$Res, _$DailyTemperatureImpl>
+    implements _$$DailyTemperatureImplCopyWith<$Res> {
+  __$$DailyTemperatureImplCopyWithImpl(_$DailyTemperatureImpl _value,
+      $Res Function(_$DailyTemperatureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_DailyTemperatureCopyWithImpl<$Res>
     Object? min = null,
     Object? max = null,
   }) {
-    return _then(_$_DailyTemperature(
+    return _then(_$DailyTemperatureImpl(
       min: null == min
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
@@ -107,11 +107,11 @@ class __$$_DailyTemperatureCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DailyTemperature implements _DailyTemperature {
-  _$_DailyTemperature({this.min = 0.0, this.max = 0.0});
+class _$DailyTemperatureImpl implements _DailyTemperature {
+  _$DailyTemperatureImpl({this.min = 0.0, this.max = 0.0});
 
-  factory _$_DailyTemperature.fromJson(Map<String, dynamic> json) =>
-      _$$_DailyTemperatureFromJson(json);
+  factory _$DailyTemperatureImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DailyTemperatureImplFromJson(json);
 
   @override
   @JsonKey()
@@ -126,10 +126,10 @@ class _$_DailyTemperature implements _DailyTemperature {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DailyTemperature &&
+            other is _$DailyTemperatureImpl &&
             (identical(other.min, min) || other.min == min) &&
             (identical(other.max, max) || other.max == max));
   }
@@ -141,12 +141,13 @@ class _$_DailyTemperature implements _DailyTemperature {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DailyTemperatureCopyWith<_$_DailyTemperature> get copyWith =>
-      __$$_DailyTemperatureCopyWithImpl<_$_DailyTemperature>(this, _$identity);
+  _$$DailyTemperatureImplCopyWith<_$DailyTemperatureImpl> get copyWith =>
+      __$$DailyTemperatureImplCopyWithImpl<_$DailyTemperatureImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DailyTemperatureToJson(
+    return _$$DailyTemperatureImplToJson(
       this,
     );
   }
@@ -154,10 +155,10 @@ class _$_DailyTemperature implements _DailyTemperature {
 
 abstract class _DailyTemperature implements DailyTemperature {
   factory _DailyTemperature({final double min, final double max}) =
-      _$_DailyTemperature;
+      _$DailyTemperatureImpl;
 
   factory _DailyTemperature.fromJson(Map<String, dynamic> json) =
-      _$_DailyTemperature.fromJson;
+      _$DailyTemperatureImpl.fromJson;
 
   @override
   double get min;
@@ -165,6 +166,6 @@ abstract class _DailyTemperature implements DailyTemperature {
   double get max;
   @override
   @JsonKey(ignore: true)
-  _$$_DailyTemperatureCopyWith<_$_DailyTemperature> get copyWith =>
+  _$$DailyTemperatureImplCopyWith<_$DailyTemperatureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
