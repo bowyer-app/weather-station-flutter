@@ -10,3 +10,7 @@ linter:
   rules:
     public_member_api_docs: false
     prefer_const_constructors: true
+    require_trailing_commas: true
+    cast_nullable_to_non_nullable: true
+    prefer_relative_imports: true
+    sort_constructors_first: true

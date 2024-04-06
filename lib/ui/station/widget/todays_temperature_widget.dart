@@ -1,61 +1,101 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:sprintf/sprintf.dart';
 
 import '../../../gen/colors.gen.dart';
 import '../../component/down_icon_widget.dart';
 import '../../component/up_icon_widget.dart';
+import '../../hook/use_l10n.dart';
 import '../model/todays_weather_item_model.dart';
 
 class TodaysTemperatureWidget extends StatelessWidget {
-  final TodaysWeatherItemModel _model;
+  TodaysTemperatureWidget({required this.model});
 
-  TodaysTemperatureWidget(this._model);
-
-  Widget _buildMaxTemperature(L10n message) {
-    var children = <Widget>[];
-    children.add(UpIconWidget(20, ColorName.textRed));
-    var text = Container(
-      margin: const EdgeInsets.only(left: 8),
-      child: Text(
-        sprintf(message.temperatureUnit, [_model.maxTemperature]),
-        style: const TextStyle(fontSize: 24, color: ColorName.textRed),
-      ),
-    );
-    children.add(text);
-    return Row(
-      children: children,
-    );
-  }
-
-  Widget _buildMinTemperature(L10n message) {
-    var children = <Widget>[];
-    children.add(DownIconWidget(20, ColorName.textBlue));
-    var text = Container(
-      margin: const EdgeInsets.only(left: 8),
-      child: Text(
-        sprintf(message.temperatureUnit, [_model.minTemperature]),
-        style: const TextStyle(fontSize: 24, color: ColorName.textBlue),
-      ),
-    );
-    children.add(text);
-    return Row(
-      children: children,
-    );
-  }
+  final TodaysWeatherItemModel model;
 
   @override
   Widget build(BuildContext context) {
-    final message = L10n.of(context)!;
-    var children = <Widget>[];
-    children.add(_buildMaxTemperature(message));
-    children.add(_buildMinTemperature(message));
     return Container(
       margin: const EdgeInsets.fromLTRB(20, 0, 0, 4),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: children,
+        children: [
+          MaxTemperature(
+            maxTemperature: model.maxTemperature,
+          ),
+          MinTemperature(
+            minTemperature: model.minTemperature,
+          ),
+        ],
       ),
+    );
+  }
+}
+
+class MaxTemperature extends HookWidget {
+  MaxTemperature({
+    required this.maxTemperature,
+  });
+
+  final double maxTemperature;
+
+  @override
+  Widget build(BuildContext context) {
+    final message = useL10n();
+    return Row(
+      children: [
+        UpIconWidget(
+          size: 20,
+          color: ColorName.textRed,
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 8),
+          child: Text(
+            sprintf(
+              message.temperatureUnit,
+              [maxTemperature],
+            ),
+            style: const TextStyle(
+              color: ColorName.textRed,
+              fontSize: 24,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class MinTemperature extends HookWidget {
+  MinTemperature({
+    required this.minTemperature,
+  });
+
+  final double minTemperature;
+
+  @override
+  Widget build(BuildContext context) {
+    final message = useL10n();
+    return Row(
+      children: [
+        DownIconWidget(
+          size: 20,
+          color: ColorName.textBlue,
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 8),
+          child: Text(
+            sprintf(
+              message.temperatureUnit,
+              [minTemperature],
+            ),
+            style: const TextStyle(
+              color: ColorName.textWhite,
+              fontSize: 24,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

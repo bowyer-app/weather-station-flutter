@@ -26,11 +26,16 @@ class StationPageController extends StateNotifier<StationPageState> {
 
   final StationTopUseCase _stationTopUseCase;
 
-  WeatherRequestModel _getWeatherRequestModel() =>
-      WeatherRequestModel(state.geolocation, state.appId);
+  WeatherRequestModel _getWeatherRequestModel() => WeatherRequestModel(
+        geolocation: state.geolocation,
+        appId: state.appId,
+      );
 
   RoomConditionRequestModel _getRoomConditionRequestModel() =>
-      RoomConditionRequestModel(state.accessToken, state.deviceId);
+      RoomConditionRequestModel(
+        accessToken: state.accessToken,
+        deviceId: state.deviceId,
+      );
 
   void onBuildStart() async {
     final meterDeviceId = await _stationTopUseCase.loadMeterDeviceId();

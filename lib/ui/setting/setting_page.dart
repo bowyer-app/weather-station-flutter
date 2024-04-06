@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../gen/colors.gen.dart';
 import '../component/input_text_dialog.dart';
+import '../hook/use_l10n.dart';
 import 'setting_page_controller.dart';
 
 final TextStyle _textStyle = const TextStyle(
@@ -22,7 +23,7 @@ class SettingPage extends HookConsumerWidget with InputTextDialog {
     final controller = ref.read(settingPageControllerProvider.notifier);
     controller.onBuildStart();
 
-    var message = L10n.of(context)!;
+    final message = useL10n();
 
     return Scaffold(
       appBar: PreferredSize(
@@ -66,10 +67,12 @@ class _DeviceId extends HookConsumerWidget with InputTextDialog {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final message = L10n.of(context)!;
+    final message = useL10n();
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final deviceId = ref.read(settingPageControllerProvider
-        .select((value) => value.deviceId?.value ?? ""));
+    final deviceId = ref.read(
+      settingPageControllerProvider
+          .select((value) => value.deviceId?.value ?? ""),
+    );
     return ListTile(
       title: Text(
         message.meterDeviceId,
@@ -98,10 +101,12 @@ class _AccessToken extends HookConsumerWidget with InputTextDialog {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final message = L10n.of(context)!;
+    final message = useL10n();
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final accessToken = ref.read(settingPageControllerProvider
-        .select((value) => value.accessToken?.value ?? ""));
+    final accessToken = ref.read(
+      settingPageControllerProvider
+          .select((value) => value.accessToken?.value ?? ""),
+    );
     return ListTile(
       title: Text(
         message.switchBotAccessToken,
@@ -130,10 +135,12 @@ class _ZipCode extends HookConsumerWidget with InputTextDialog {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final message = L10n.of(context)!;
+    final message = useL10n();
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final zipCode = ref.read(settingPageControllerProvider
-        .select((value) => value.zipCode?.value ?? ""));
+    final zipCode = ref.read(
+      settingPageControllerProvider
+          .select((value) => value.zipCode?.value ?? ""),
+    );
     return ListTile(
       title: Text(
         message.zipCode,
@@ -162,10 +169,11 @@ class _OpenWeatherId extends HookConsumerWidget with InputTextDialog {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final message = L10n.of(context)!;
+    final message = useL10n();
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final appId = ref.read(settingPageControllerProvider
-        .select((value) => value.appId?.value ?? ""));
+    final appId = ref.read(
+      settingPageControllerProvider.select((value) => value.appId?.value ?? ""),
+    );
 
     return ListTile(
       title: Text(

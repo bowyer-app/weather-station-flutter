@@ -5,32 +5,43 @@ import '../../../gen/colors.gen.dart';
 import '../model/todays_weather_item_model.dart';
 
 class TodaysWeatherWidget extends StatelessWidget {
-  final TodaysWeatherItemModel _model;
+  TodaysWeatherWidget({
+    required this.model,
+  });
 
-  TodaysWeatherWidget(this._model);
-
-  Widget _buildDescription() {
-    return Container(
-      margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
-      child: Text(
-        _model.description,
-        style: const TextStyle(fontSize: 16, color: ColorName.textWhite),
-      ),
-    );
-  }
-
-  Widget _buildIcon() {
-    return WeatherTypeIconExt.toSvgPicture(
-        type: _model.weatherType, size: 100.0);
-  }
+  final TodaysWeatherItemModel model;
 
   @override
   Widget build(BuildContext context) {
-    var children = <Widget>[];
-    children.add(_buildIcon());
-    children.add(_buildDescription());
     return Column(
-      children: children,
+      children: [
+        WeatherTypeIconExt.toSvgPicture(
+          type: model.weatherType,
+          size: 100.0,
+        ),
+        Description(
+          description: model.description,
+        ),
+      ],
+    );
+  }
+}
+
+class Description extends StatelessWidget {
+  Description({
+    required this.description,
+  });
+
+  final String description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+      child: Text(
+        description,
+        style: const TextStyle(fontSize: 16, color: ColorName.textWhite),
+      ),
     );
   }
 }
