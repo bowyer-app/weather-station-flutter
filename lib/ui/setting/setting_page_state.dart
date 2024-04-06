@@ -9,11 +9,12 @@ part "setting_page_state.freezed.dart";
 
 @freezed
 class SettingPageState with _$SettingPageState {
-  const factory SettingPageState(
-      {MeterDeviceId? deviceId,
-      SwitchBotAccessToken? accessToken,
-      OpenWeatherAppId? appId,
-      ZipCode? zipCode}) = _SettingPageState;
+  const factory SettingPageState({
+    MeterDeviceId? deviceId,
+    SwitchBotAccessToken? accessToken,
+    OpenWeatherAppId? appId,
+    ZipCode? zipCode,
+  }) = _SettingPageState;
 
   factory SettingPageState.init() => const _SettingPageState();
 }

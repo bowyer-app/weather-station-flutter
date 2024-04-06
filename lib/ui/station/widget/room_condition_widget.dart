@@ -1,71 +1,121 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sprintf/sprintf.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
+import '../../hook/use_l10n.dart';
 import '../model/room_condition_item_model.dart';
 
 class RoomConditionWidget extends StatelessWidget {
-  final RoomConditionItemModel _roomConditionItemModel;
+  RoomConditionWidget({
+    required this.roomConditionItemModel,
+  });
 
-  RoomConditionWidget(this._roomConditionItemModel);
-
-  Widget _buildTemperatureIcon() {
-    return Assets.svgs.vectorTemperature
-        .svg(width: 24, height: 24, color: ColorName.objectWhite);
-  }
-
-  Widget _buildTemperatureWidget(L10n message) {
-    var children = <Widget>[];
-    children.add(_buildTemperatureIcon());
-    children.add(
-      Text(
-        sprintf(
-          message.temperatureUnit,
-          [_roomConditionItemModel.nowTemperature],
-        ),
-        style: const TextStyle(fontSize: 24, color: ColorName.textWhite),
-      ),
-    );
-    return Row(
-      children: children,
-    );
-  }
-
-  Widget _buildHumidityIcon() {
-    return Assets.svgs.vectorHumidity
-        .svg(width: 24, height: 24, color: ColorName.objectWhite);
-  }
-
-  Widget _buildHumidityWidget(L10n message) {
-    var children = <Widget>[];
-    children.add(_buildHumidityIcon());
-    children.add(
-      Text(
-        sprintf(
-          message.humidityUnit,
-          [_roomConditionItemModel.humidity],
-        ),
-        style: const TextStyle(fontSize: 24, color: ColorName.textWhite),
-      ),
-    );
-    return Row(
-      children: children,
-    );
-  }
+  final RoomConditionItemModel roomConditionItemModel;
 
   @override
   Widget build(BuildContext context) {
-    final message = L10n.of(context)!;
-    var children = <Widget>[];
-    children.add(_buildTemperatureWidget(message));
-    children.add(_buildHumidityWidget(message));
     return Container(
       margin: const EdgeInsets.fromLTRB(20, 4, 0, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: children,
+        children: [
+          Temperature(
+            temperature: roomConditionItemModel.nowTemperature,
+          ),
+          Humidity(
+            humidity: roomConditionItemModel.humidity,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Temperature extends HookConsumerWidget {
+  const Temperature({
+    required this.temperature,
+  });
+
+  final double temperature;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final message = useL10n();
+    return Row(
+      children: [
+        const TemperatureIcon(),
+        Text(
+          sprintf(
+            message.temperatureUnit,
+            [temperature],
+          ),
+          style: const TextStyle(
+            fontSize: 24,
+            color: ColorName.textWhite,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class TemperatureIcon extends StatelessWidget {
+  const TemperatureIcon();
+
+  @override
+  Widget build(BuildContext context) {
+    return Assets.svgs.vectorTemperature.svg(
+      width: 24,
+      height: 24,
+      colorFilter: const ColorFilter.mode(
+        ColorName.textWhite,
+        BlendMode.srcIn,
+      ),
+    );
+  }
+}
+
+class Humidity extends HookConsumerWidget {
+  const Humidity({
+    required this.humidity,
+  });
+
+  final int humidity;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final message = useL10n();
+    return Row(
+      children: [
+        const HumidityIcon(),
+        Text(
+          sprintf(
+            message.humidityUnit,
+            [humidity],
+          ),
+          style: const TextStyle(
+            fontSize: 24,
+            color: ColorName.textWhite,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class HumidityIcon extends StatelessWidget {
+  const HumidityIcon();
+
+  @override
+  Widget build(BuildContext context) {
+    return Assets.svgs.vectorHumidity.svg(
+      width: 24,
+      height: 24,
+      colorFilter: const ColorFilter.mode(
+        ColorName.textWhite,
+        BlendMode.srcIn,
       ),
     );
   }

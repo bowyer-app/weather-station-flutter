@@ -10,7 +10,10 @@ import 'setting_page_state.dart';
 
 final settingPageControllerProvider =
     StateNotifierProvider<SettingPageController, SettingPageState>(
-        (ref) => SettingPageController(ref.read(appSettingTopUsecaseProvider)));
+  (ref) => SettingPageController(
+    ref.read(appSettingTopUsecaseProvider),
+  ),
+);
 
 class SettingPageController extends StateNotifier<SettingPageState> {
   SettingPageController(this._settingTopUseCase)
@@ -25,10 +28,11 @@ class SettingPageController extends StateNotifier<SettingPageState> {
     final zipCode = await _settingTopUseCase.loadZipCode();
 
     state = state.copyWith.call(
-        deviceId: meterDeviceId,
-        accessToken: accessToken,
-        appId: weatherAppId,
-        zipCode: zipCode);
+      deviceId: meterDeviceId,
+      accessToken: accessToken,
+      appId: weatherAppId,
+      zipCode: zipCode,
+    );
   }
 
   Future<void> saveMeterDeviceId(String deviceId) async {

@@ -7,14 +7,16 @@ part 'weekly_weather_item_model.freezed.dart';
 
 @freezed
 class WeeklyWeatherItemModel with _$WeeklyWeatherItemModel {
-  factory WeeklyWeatherItemModel(
-          {required List<DailyWeatherItemModel> weatherList}) =
-      _WeeklyWeatherItemModel;
+  factory WeeklyWeatherItemModel({
+    required List<DailyWeatherItemModel> weatherList,
+  }) = _WeeklyWeatherItemModel;
 
   factory WeeklyWeatherItemModel.from(List<Weather> weatherList) =>
       WeeklyWeatherItemModel(
           weatherList: weatherList
-              .map((dailyWeather) => DailyWeatherItemModel.from(dailyWeather))
+              .map(
+                DailyWeatherItemModel.from,
+              )
               .toList());
 
   factory WeeklyWeatherItemModel.init() =>

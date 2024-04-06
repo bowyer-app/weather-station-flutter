@@ -15,27 +15,29 @@ part 'station_page_state.freezed.dart';
 
 @freezed
 class StationPageState with _$StationPageState {
-  const factory StationPageState(
-      {required DateItemModel nowDateItemModel,
-      required TimeItemModel timeItemModel,
-      required TodaysWeatherItemModel todaysWeatherItemModel,
-      required RoomConditionItemModel roomConditionItemModel,
-      required WeeklyWeatherItemModel weeklyWeatherItemModel,
-      required LocationItemModel locationItemModel,
-      MeterDeviceId? deviceId,
-      SwitchBotAccessToken? accessToken,
-      OpenWeatherAppId? appId,
-      Geolocation? geolocation,
-      required bool isFirstRequest,
-      required bool needShowSetting}) = _StationPageState;
+  const factory StationPageState({
+    required DateItemModel nowDateItemModel,
+    required TimeItemModel timeItemModel,
+    required TodaysWeatherItemModel todaysWeatherItemModel,
+    required RoomConditionItemModel roomConditionItemModel,
+    required WeeklyWeatherItemModel weeklyWeatherItemModel,
+    required LocationItemModel locationItemModel,
+    MeterDeviceId? deviceId,
+    SwitchBotAccessToken? accessToken,
+    OpenWeatherAppId? appId,
+    Geolocation? geolocation,
+    required bool isFirstRequest,
+    required bool needShowSetting,
+  }) = _StationPageState;
 
   factory StationPageState.init() => StationPageState(
-      nowDateItemModel: DateItemModel.init(),
-      timeItemModel: TimeItemModel.init(),
-      todaysWeatherItemModel: TodaysWeatherItemModel.init(),
-      roomConditionItemModel: RoomConditionItemModel.init(),
-      weeklyWeatherItemModel: WeeklyWeatherItemModel.init(),
-      locationItemModel: LocationItemModel.init(),
-      isFirstRequest: true,
-      needShowSetting: true);
+        nowDateItemModel: DateItemModel.init(),
+        timeItemModel: TimeItemModel.init(),
+        todaysWeatherItemModel: TodaysWeatherItemModel.init(),
+        roomConditionItemModel: RoomConditionItemModel.init(),
+        weeklyWeatherItemModel: WeeklyWeatherItemModel.init(),
+        locationItemModel: LocationItemModel.init(),
+        isFirstRequest: true,
+        needShowSetting: true,
+      );
 }
