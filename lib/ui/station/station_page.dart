@@ -175,7 +175,8 @@ class _WeeklyWeather extends HookConsumerWidget {
           .select((value) => value.weeklyWeatherItemModel),
     );
     final needShowSetting = ref.watch(
-        stationPageControllerProvider.select((value) => value.needShowSetting));
+      stationPageControllerProvider.select((value) => value.needShowSetting),
+    );
     // TODO 設定不足はここで良いのか検討する
     if (needShowSetting) {
       return const _NeedSettingButton();
