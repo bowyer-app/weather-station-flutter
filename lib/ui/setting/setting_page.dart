@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../gen/colors.gen.dart';
@@ -69,7 +68,7 @@ class _DeviceId extends HookConsumerWidget with InputTextDialog {
   Widget build(BuildContext context, WidgetRef ref) {
     final message = useL10n();
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final deviceId = ref.read(
+    final deviceId = ref.watch(
       settingPageControllerProvider
           .select((value) => value.deviceId?.value ?? ""),
     );
@@ -103,7 +102,7 @@ class _AccessToken extends HookConsumerWidget with InputTextDialog {
   Widget build(BuildContext context, WidgetRef ref) {
     final message = useL10n();
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final accessToken = ref.read(
+    final accessToken = ref.watch(
       settingPageControllerProvider
           .select((value) => value.accessToken?.value ?? ""),
     );
@@ -137,7 +136,7 @@ class _ZipCode extends HookConsumerWidget with InputTextDialog {
   Widget build(BuildContext context, WidgetRef ref) {
     final message = useL10n();
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final zipCode = ref.read(
+    final zipCode = ref.watch(
       settingPageControllerProvider
           .select((value) => value.zipCode?.value ?? ""),
     );
@@ -171,7 +170,7 @@ class _OpenWeatherId extends HookConsumerWidget with InputTextDialog {
   Widget build(BuildContext context, WidgetRef ref) {
     final message = useL10n();
     final controller = ref.read(settingPageControllerProvider.notifier);
-    final appId = ref.read(
+    final appId = ref.watch(
       settingPageControllerProvider.select((value) => value.appId?.value ?? ""),
     );
 
