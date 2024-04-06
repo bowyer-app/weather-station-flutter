@@ -6,9 +6,9 @@ part of 'current_weather_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CurrentWeatherResponse _$$_CurrentWeatherResponseFromJson(
+_$CurrentWeatherResponseImpl _$$CurrentWeatherResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_CurrentWeatherResponse(
+    _$CurrentWeatherResponseImpl(
       dt: json['dt'] as int? ?? 0,
       weather: (json['weather'] as List<dynamic>?)
               ?.map((e) => WeatherData.fromJson(e as Map<String, dynamic>))
@@ -19,8 +19,8 @@ _$_CurrentWeatherResponse _$$_CurrentWeatherResponseFromJson(
           : WeatherMain.fromJson(json['main'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_CurrentWeatherResponseToJson(
-        _$_CurrentWeatherResponse instance) =>
+Map<String, dynamic> _$$CurrentWeatherResponseImplToJson(
+        _$CurrentWeatherResponseImpl instance) =>
     <String, dynamic>{
       'dt': instance.dt,
       'weather': instance.weather,

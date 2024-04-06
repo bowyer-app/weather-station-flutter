@@ -12,7 +12,7 @@ part of 'time_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TimeItemModel {
@@ -63,22 +63,22 @@ class _$TimeItemModelCopyWithImpl<$Res, $Val extends TimeItemModel>
 }
 
 /// @nodoc
-abstract class _$$_TimeItemModelCopyWith<$Res>
+abstract class _$$TimeItemModelImplCopyWith<$Res>
     implements $TimeItemModelCopyWith<$Res> {
-  factory _$$_TimeItemModelCopyWith(
-          _$_TimeItemModel value, $Res Function(_$_TimeItemModel) then) =
-      __$$_TimeItemModelCopyWithImpl<$Res>;
+  factory _$$TimeItemModelImplCopyWith(
+          _$TimeItemModelImpl value, $Res Function(_$TimeItemModelImpl) then) =
+      __$$TimeItemModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int hour, int minute});
 }
 
 /// @nodoc
-class __$$_TimeItemModelCopyWithImpl<$Res>
-    extends _$TimeItemModelCopyWithImpl<$Res, _$_TimeItemModel>
-    implements _$$_TimeItemModelCopyWith<$Res> {
-  __$$_TimeItemModelCopyWithImpl(
-      _$_TimeItemModel _value, $Res Function(_$_TimeItemModel) _then)
+class __$$TimeItemModelImplCopyWithImpl<$Res>
+    extends _$TimeItemModelCopyWithImpl<$Res, _$TimeItemModelImpl>
+    implements _$$TimeItemModelImplCopyWith<$Res> {
+  __$$TimeItemModelImplCopyWithImpl(
+      _$TimeItemModelImpl _value, $Res Function(_$TimeItemModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_TimeItemModelCopyWithImpl<$Res>
     Object? hour = null,
     Object? minute = null,
   }) {
-    return _then(_$_TimeItemModel(
+    return _then(_$TimeItemModelImpl(
       hour: null == hour
           ? _value.hour
           : hour // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_TimeItemModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TimeItemModel implements _TimeItemModel {
-  _$_TimeItemModel({required this.hour, required this.minute});
+class _$TimeItemModelImpl implements _TimeItemModel {
+  _$TimeItemModelImpl({required this.hour, required this.minute});
 
   @override
   final int hour;
@@ -116,10 +116,10 @@ class _$_TimeItemModel implements _TimeItemModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TimeItemModel &&
+            other is _$TimeItemModelImpl &&
             (identical(other.hour, hour) || other.hour == hour) &&
             (identical(other.minute, minute) || other.minute == minute));
   }
@@ -130,13 +130,13 @@ class _$_TimeItemModel implements _TimeItemModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TimeItemModelCopyWith<_$_TimeItemModel> get copyWith =>
-      __$$_TimeItemModelCopyWithImpl<_$_TimeItemModel>(this, _$identity);
+  _$$TimeItemModelImplCopyWith<_$TimeItemModelImpl> get copyWith =>
+      __$$TimeItemModelImplCopyWithImpl<_$TimeItemModelImpl>(this, _$identity);
 }
 
 abstract class _TimeItemModel implements TimeItemModel {
   factory _TimeItemModel({required final int hour, required final int minute}) =
-      _$_TimeItemModel;
+      _$TimeItemModelImpl;
 
   @override
   int get hour;
@@ -144,6 +144,6 @@ abstract class _TimeItemModel implements TimeItemModel {
   int get minute;
   @override
   @JsonKey(ignore: true)
-  _$$_TimeItemModelCopyWith<_$_TimeItemModel> get copyWith =>
+  _$$TimeItemModelImplCopyWith<_$TimeItemModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'meter_body.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MeterBody _$MeterBodyFromJson(Map<String, dynamic> json) {
   return _MeterBody.fromJson(json);
@@ -67,21 +67,22 @@ class _$MeterBodyCopyWithImpl<$Res, $Val extends MeterBody>
 }
 
 /// @nodoc
-abstract class _$$_MeterBodyCopyWith<$Res> implements $MeterBodyCopyWith<$Res> {
-  factory _$$_MeterBodyCopyWith(
-          _$_MeterBody value, $Res Function(_$_MeterBody) then) =
-      __$$_MeterBodyCopyWithImpl<$Res>;
+abstract class _$$MeterBodyImplCopyWith<$Res>
+    implements $MeterBodyCopyWith<$Res> {
+  factory _$$MeterBodyImplCopyWith(
+          _$MeterBodyImpl value, $Res Function(_$MeterBodyImpl) then) =
+      __$$MeterBodyImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double temperature, int humidity});
 }
 
 /// @nodoc
-class __$$_MeterBodyCopyWithImpl<$Res>
-    extends _$MeterBodyCopyWithImpl<$Res, _$_MeterBody>
-    implements _$$_MeterBodyCopyWith<$Res> {
-  __$$_MeterBodyCopyWithImpl(
-      _$_MeterBody _value, $Res Function(_$_MeterBody) _then)
+class __$$MeterBodyImplCopyWithImpl<$Res>
+    extends _$MeterBodyCopyWithImpl<$Res, _$MeterBodyImpl>
+    implements _$$MeterBodyImplCopyWith<$Res> {
+  __$$MeterBodyImplCopyWithImpl(
+      _$MeterBodyImpl _value, $Res Function(_$MeterBodyImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -90,7 +91,7 @@ class __$$_MeterBodyCopyWithImpl<$Res>
     Object? temperature = null,
     Object? humidity = null,
   }) {
-    return _then(_$_MeterBody(
+    return _then(_$MeterBodyImpl(
       temperature: null == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
@@ -105,11 +106,11 @@ class __$$_MeterBodyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MeterBody implements _MeterBody {
-  _$_MeterBody({this.temperature = 0.0, this.humidity = 0});
+class _$MeterBodyImpl implements _MeterBody {
+  _$MeterBodyImpl({this.temperature = 0.0, this.humidity = 0});
 
-  factory _$_MeterBody.fromJson(Map<String, dynamic> json) =>
-      _$$_MeterBodyFromJson(json);
+  factory _$MeterBodyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MeterBodyImplFromJson(json);
 
   @override
   @JsonKey()
@@ -124,10 +125,10 @@ class _$_MeterBody implements _MeterBody {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MeterBody &&
+            other is _$MeterBodyImpl &&
             (identical(other.temperature, temperature) ||
                 other.temperature == temperature) &&
             (identical(other.humidity, humidity) ||
@@ -141,12 +142,12 @@ class _$_MeterBody implements _MeterBody {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MeterBodyCopyWith<_$_MeterBody> get copyWith =>
-      __$$_MeterBodyCopyWithImpl<_$_MeterBody>(this, _$identity);
+  _$$MeterBodyImplCopyWith<_$MeterBodyImpl> get copyWith =>
+      __$$MeterBodyImplCopyWithImpl<_$MeterBodyImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MeterBodyToJson(
+    return _$$MeterBodyImplToJson(
       this,
     );
   }
@@ -154,10 +155,10 @@ class _$_MeterBody implements _MeterBody {
 
 abstract class _MeterBody implements MeterBody {
   factory _MeterBody({final double temperature, final int humidity}) =
-      _$_MeterBody;
+      _$MeterBodyImpl;
 
   factory _MeterBody.fromJson(Map<String, dynamic> json) =
-      _$_MeterBody.fromJson;
+      _$MeterBodyImpl.fromJson;
 
   @override
   double get temperature;
@@ -165,6 +166,6 @@ abstract class _MeterBody implements MeterBody {
   int get humidity;
   @override
   @JsonKey(ignore: true)
-  _$$_MeterBodyCopyWith<_$_MeterBody> get copyWith =>
+  _$$MeterBodyImplCopyWith<_$MeterBodyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

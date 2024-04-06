@@ -59,12 +59,10 @@ ThemeData get lightTheme {
   return ThemeData.light().copyWith(
     visualDensity: VisualDensity.adaptivePlatformDensity,
     textTheme:
-        GoogleFonts.notoSansTextTheme(ThemeData.light().textTheme).copyWith(
-      headline1: headline1,
-      button: buttonTextStyle,
+        GoogleFonts.notoSansTextTheme(ThemeData.light().textTheme),
+    colorScheme: ColorScheme.fromSwatch(
+      accentColor: accentColor,
     ),
-    accentColor: accentColor,
-    errorColor: errorColor,
   );
 }
 
@@ -72,12 +70,10 @@ ThemeData get darkTheme {
   return ThemeData.dark().copyWith(
     visualDensity: VisualDensity.adaptivePlatformDensity,
     textTheme:
-        GoogleFonts.notoSansTextTheme(ThemeData.dark().textTheme).copyWith(
-      headline1: headline1,
-      button: buttonTextStyle,
+        GoogleFonts.notoSansTextTheme(ThemeData.dark().textTheme),
+    colorScheme: ColorScheme.fromSwatch(
+      accentColor: accentColor,
     ),
-    accentColor: accentColor,
-    errorColor: errorColor,
   );
 }
 

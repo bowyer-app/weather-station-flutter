@@ -12,7 +12,7 @@ part of 'meter_status_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MeterStatusResponse _$MeterStatusResponseFromJson(Map<String, dynamic> json) {
   return _MeterStatusResponse.fromJson(json);
@@ -83,11 +83,11 @@ class _$MeterStatusResponseCopyWithImpl<$Res, $Val extends MeterStatusResponse>
 }
 
 /// @nodoc
-abstract class _$$_MeterStatusResponseCopyWith<$Res>
+abstract class _$$MeterStatusResponseImplCopyWith<$Res>
     implements $MeterStatusResponseCopyWith<$Res> {
-  factory _$$_MeterStatusResponseCopyWith(_$_MeterStatusResponse value,
-          $Res Function(_$_MeterStatusResponse) then) =
-      __$$_MeterStatusResponseCopyWithImpl<$Res>;
+  factory _$$MeterStatusResponseImplCopyWith(_$MeterStatusResponseImpl value,
+          $Res Function(_$MeterStatusResponseImpl) then) =
+      __$$MeterStatusResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'body') MeterBody? meterBody, int statusCode});
@@ -97,11 +97,11 @@ abstract class _$$_MeterStatusResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MeterStatusResponseCopyWithImpl<$Res>
-    extends _$MeterStatusResponseCopyWithImpl<$Res, _$_MeterStatusResponse>
-    implements _$$_MeterStatusResponseCopyWith<$Res> {
-  __$$_MeterStatusResponseCopyWithImpl(_$_MeterStatusResponse _value,
-      $Res Function(_$_MeterStatusResponse) _then)
+class __$$MeterStatusResponseImplCopyWithImpl<$Res>
+    extends _$MeterStatusResponseCopyWithImpl<$Res, _$MeterStatusResponseImpl>
+    implements _$$MeterStatusResponseImplCopyWith<$Res> {
+  __$$MeterStatusResponseImplCopyWithImpl(_$MeterStatusResponseImpl _value,
+      $Res Function(_$MeterStatusResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,7 +110,7 @@ class __$$_MeterStatusResponseCopyWithImpl<$Res>
     Object? meterBody = freezed,
     Object? statusCode = null,
   }) {
-    return _then(_$_MeterStatusResponse(
+    return _then(_$MeterStatusResponseImpl(
       meterBody: freezed == meterBody
           ? _value.meterBody
           : meterBody // ignore: cast_nullable_to_non_nullable
@@ -125,12 +125,12 @@ class __$$_MeterStatusResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MeterStatusResponse implements _MeterStatusResponse {
-  _$_MeterStatusResponse(
+class _$MeterStatusResponseImpl implements _MeterStatusResponse {
+  _$MeterStatusResponseImpl(
       {@JsonKey(name: 'body') this.meterBody, this.statusCode = 0});
 
-  factory _$_MeterStatusResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_MeterStatusResponseFromJson(json);
+  factory _$MeterStatusResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MeterStatusResponseImplFromJson(json);
 
   @override
   @JsonKey(name: 'body')
@@ -145,10 +145,10 @@ class _$_MeterStatusResponse implements _MeterStatusResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MeterStatusResponse &&
+            other is _$MeterStatusResponseImpl &&
             (identical(other.meterBody, meterBody) ||
                 other.meterBody == meterBody) &&
             (identical(other.statusCode, statusCode) ||
@@ -162,13 +162,13 @@ class _$_MeterStatusResponse implements _MeterStatusResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MeterStatusResponseCopyWith<_$_MeterStatusResponse> get copyWith =>
-      __$$_MeterStatusResponseCopyWithImpl<_$_MeterStatusResponse>(
+  _$$MeterStatusResponseImplCopyWith<_$MeterStatusResponseImpl> get copyWith =>
+      __$$MeterStatusResponseImplCopyWithImpl<_$MeterStatusResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MeterStatusResponseToJson(
+    return _$$MeterStatusResponseImplToJson(
       this,
     );
   }
@@ -177,10 +177,10 @@ class _$_MeterStatusResponse implements _MeterStatusResponse {
 abstract class _MeterStatusResponse implements MeterStatusResponse {
   factory _MeterStatusResponse(
       {@JsonKey(name: 'body') final MeterBody? meterBody,
-      final int statusCode}) = _$_MeterStatusResponse;
+      final int statusCode}) = _$MeterStatusResponseImpl;
 
   factory _MeterStatusResponse.fromJson(Map<String, dynamic> json) =
-      _$_MeterStatusResponse.fromJson;
+      _$MeterStatusResponseImpl.fromJson;
 
   @override
   @JsonKey(name: 'body')
@@ -189,6 +189,6 @@ abstract class _MeterStatusResponse implements MeterStatusResponse {
   int get statusCode;
   @override
   @JsonKey(ignore: true)
-  _$$_MeterStatusResponseCopyWith<_$_MeterStatusResponse> get copyWith =>
+  _$$MeterStatusResponseImplCopyWith<_$MeterStatusResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

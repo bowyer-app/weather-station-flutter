@@ -1,6 +1,8 @@
 .PHONY: setup
 setup:
 	dart pub global activate fvm
+	fvm install 3.19.3
+	fvm use 3.19.3
 	npm install
 
 .PHONY: dependencies

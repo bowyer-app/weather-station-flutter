@@ -12,7 +12,7 @@ part of 'current_weather_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CurrentWeatherResponse _$CurrentWeatherResponseFromJson(
     Map<String, dynamic> json) {
@@ -90,11 +90,12 @@ class _$CurrentWeatherResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_CurrentWeatherResponseCopyWith<$Res>
+abstract class _$$CurrentWeatherResponseImplCopyWith<$Res>
     implements $CurrentWeatherResponseCopyWith<$Res> {
-  factory _$$_CurrentWeatherResponseCopyWith(_$_CurrentWeatherResponse value,
-          $Res Function(_$_CurrentWeatherResponse) then) =
-      __$$_CurrentWeatherResponseCopyWithImpl<$Res>;
+  factory _$$CurrentWeatherResponseImplCopyWith(
+          _$CurrentWeatherResponseImpl value,
+          $Res Function(_$CurrentWeatherResponseImpl) then) =
+      __$$CurrentWeatherResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int dt, List<WeatherData> weather, WeatherMain? main});
@@ -104,12 +105,13 @@ abstract class _$$_CurrentWeatherResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CurrentWeatherResponseCopyWithImpl<$Res>
+class __$$CurrentWeatherResponseImplCopyWithImpl<$Res>
     extends _$CurrentWeatherResponseCopyWithImpl<$Res,
-        _$_CurrentWeatherResponse>
-    implements _$$_CurrentWeatherResponseCopyWith<$Res> {
-  __$$_CurrentWeatherResponseCopyWithImpl(_$_CurrentWeatherResponse _value,
-      $Res Function(_$_CurrentWeatherResponse) _then)
+        _$CurrentWeatherResponseImpl>
+    implements _$$CurrentWeatherResponseImplCopyWith<$Res> {
+  __$$CurrentWeatherResponseImplCopyWithImpl(
+      _$CurrentWeatherResponseImpl _value,
+      $Res Function(_$CurrentWeatherResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,7 +121,7 @@ class __$$_CurrentWeatherResponseCopyWithImpl<$Res>
     Object? weather = null,
     Object? main = freezed,
   }) {
-    return _then(_$_CurrentWeatherResponse(
+    return _then(_$CurrentWeatherResponseImpl(
       dt: null == dt
           ? _value.dt
           : dt // ignore: cast_nullable_to_non_nullable
@@ -138,13 +140,13 @@ class __$$_CurrentWeatherResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CurrentWeatherResponse implements _CurrentWeatherResponse {
-  _$_CurrentWeatherResponse(
+class _$CurrentWeatherResponseImpl implements _CurrentWeatherResponse {
+  _$CurrentWeatherResponseImpl(
       {this.dt = 0, final List<WeatherData> weather = const [], this.main})
       : _weather = weather;
 
-  factory _$_CurrentWeatherResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_CurrentWeatherResponseFromJson(json);
+  factory _$CurrentWeatherResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CurrentWeatherResponseImplFromJson(json);
 
   @override
   @JsonKey()
@@ -167,10 +169,10 @@ class _$_CurrentWeatherResponse implements _CurrentWeatherResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CurrentWeatherResponse &&
+            other is _$CurrentWeatherResponseImpl &&
             (identical(other.dt, dt) || other.dt == dt) &&
             const DeepCollectionEquality().equals(other._weather, _weather) &&
             (identical(other.main, main) || other.main == main));
@@ -184,13 +186,13 @@ class _$_CurrentWeatherResponse implements _CurrentWeatherResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CurrentWeatherResponseCopyWith<_$_CurrentWeatherResponse> get copyWith =>
-      __$$_CurrentWeatherResponseCopyWithImpl<_$_CurrentWeatherResponse>(
-          this, _$identity);
+  _$$CurrentWeatherResponseImplCopyWith<_$CurrentWeatherResponseImpl>
+      get copyWith => __$$CurrentWeatherResponseImplCopyWithImpl<
+          _$CurrentWeatherResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CurrentWeatherResponseToJson(
+    return _$$CurrentWeatherResponseImplToJson(
       this,
     );
   }
@@ -200,10 +202,10 @@ abstract class _CurrentWeatherResponse implements CurrentWeatherResponse {
   factory _CurrentWeatherResponse(
       {final int dt,
       final List<WeatherData> weather,
-      final WeatherMain? main}) = _$_CurrentWeatherResponse;
+      final WeatherMain? main}) = _$CurrentWeatherResponseImpl;
 
   factory _CurrentWeatherResponse.fromJson(Map<String, dynamic> json) =
-      _$_CurrentWeatherResponse.fromJson;
+      _$CurrentWeatherResponseImpl.fromJson;
 
   @override
   int get dt;
@@ -213,6 +215,6 @@ abstract class _CurrentWeatherResponse implements CurrentWeatherResponse {
   WeatherMain? get main;
   @override
   @JsonKey(ignore: true)
-  _$$_CurrentWeatherResponseCopyWith<_$_CurrentWeatherResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CurrentWeatherResponseImplCopyWith<_$CurrentWeatherResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
